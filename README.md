@@ -1,1 +1,4 @@
 # ProjectTetris
+Class:
+-Main
+-Background
