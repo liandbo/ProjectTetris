@@ -39,6 +39,6 @@ public class Main implements ActionListener{
 		}
 	}
 	public static void main(String[] args) {
-		new Main().JFrameDemo();;
+		new Main().JFrameDemo();
 	}
 }
