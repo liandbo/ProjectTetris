@@ -9,6 +9,7 @@ public class Block extends JPanel{
 	
 	private static int x=0;
 	private static int y=0;
+	private int i,j;
 
 
 	public int getX() {
@@ -19,6 +20,11 @@ public class Block extends JPanel{
 		return y;
 	}
 	
+	
+	public static void setY(int y) {
+		Block.y = y;
+	}
+
 	//giam do cao
 	public void tangY() {
 		if(y<700) {
@@ -46,6 +52,16 @@ public class Block extends JPanel{
 	public void paint(Graphics g) {
 		g.setColor(Color.red);
 		g.fillRect(x, y, 50, 50);
+		
+		//ve block co san
+		g.setColor(Color.red);
+		for(i=0;i<10;i++) {
+			for(j=0;j<15;j++) {
+				if(Check.board[i][j] == 1) {
+					g.fillRect(i*50, 700, 50, 50);
+				}
+			}
+		}
 	}
 
 }

@@ -9,8 +9,11 @@ public class Screen extends JFrame {
 	
 	private Draw drawS = new Draw();
 	private Block blockS = new Block();
+	private Check checkS = new Check();
+		
 	
 	public Screen() {
+		checkS.setboard();
 		setSize(800, 800);
 		setVisible(true);
 		setLocation(600, 100);

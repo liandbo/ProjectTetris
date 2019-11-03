@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 public class Draw extends JPanel implements Runnable{
 	
 	private Block blockD = new Block();
+	private Check checkD = new Check();
 	
 	public Draw() {
 		Thread threadD = new Thread(this);
@@ -15,7 +16,7 @@ public class Draw extends JPanel implements Runnable{
 	}
 	
 	public void paint(Graphics g) {
-		int i;
+		int i,j;
 		int x=0;
 		int h=0;
 		//ve nen`
@@ -35,6 +36,8 @@ public class Draw extends JPanel implements Runnable{
 			g.drawLine(0, h, 500, h);
 			h+=50;
 		}
+		
+
 	}
 
 	//Ve
@@ -53,6 +56,7 @@ public class Draw extends JPanel implements Runnable{
 			
 			blockD.tangY();
 			repaint();
+			checkD.checkBottom();
 		}
 	}
 
