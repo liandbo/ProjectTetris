@@ -7,6 +7,8 @@ import javax.swing.JPanel;
 
 public class Draw extends JPanel implements Runnable{
 	
+	private Block blockD = new Block();
+	
 	public Draw() {
 		Thread threadD = new Thread(this);
 		threadD.start();
@@ -16,8 +18,14 @@ public class Draw extends JPanel implements Runnable{
 		int i;
 		int x=0;
 		int h=0;
+		//ve nen`
 		g.setColor(Color.cyan);
 		g.fillRect(0, 0, getWidth(), getHeight());
+		
+		//ve block
+		blockD.paint(g);
+		
+		// ve vach
 		g.setColor(Color.white);
 		for(i=0;i<11;i++) {
 			g.drawLine(x, 0, x, getHeight());
@@ -29,10 +37,23 @@ public class Draw extends JPanel implements Runnable{
 		}
 	}
 
-	@Override
+	//Ve
 	public void run() {
-		// TODO Auto-generated method stub
-		
+		while (true) {
+			
+			
+			
+			//set delay
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			blockD.tangY();
+			repaint();
+		}
 	}
 
 }
