@@ -18,6 +18,7 @@ public class Screen extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		add(drawS);
 		
+		//Bam nut action
 		addKeyListener(new KeyAdapter() {
 
 			@Override
@@ -25,9 +26,15 @@ public class Screen extends JFrame {
 				int keyCode = e.getKeyCode();
 				if(keyCode == KeyEvent.VK_LEFT) {
 					blockS.giamX();
+					repaint();
 				}
 				if(keyCode == KeyEvent.VK_RIGHT){
 					blockS.tangX();
+					repaint();
+				}
+				if(keyCode == KeyEvent.VK_DOWN) {
+					blockS.tangY();
+					repaint();
 				}
 			}
 			

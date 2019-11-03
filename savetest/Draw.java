@@ -27,11 +27,11 @@ public class Draw extends JPanel implements Runnable{
 		
 		// ve vach
 		g.setColor(Color.white);
-		for(i=0;i<11;i++) {
-			g.drawLine(x, 0, x, getHeight());
+		for(i=0;i<11;i++) {									// doc
+			g.drawLine(x, 0, x, 750);
 			x+=50;
 		}
-		for(i=0;i<16;i++) {
+		for(i=0;i<16;i++) {									// ngang
 			g.drawLine(0, h, 500, h);
 			h+=50;
 		}

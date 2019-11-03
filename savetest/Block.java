@@ -21,9 +21,11 @@ public class Block extends JPanel{
 	
 	//giam do cao
 	public void tangY() {
-		y+=50;
-		
+		if(y<700) {
+			y+=50;
+		}
 	}
+	
 	
 	//di qua phai (tang x)
 	public void tangX() {
