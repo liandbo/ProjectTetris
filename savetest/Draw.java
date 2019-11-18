@@ -19,6 +19,7 @@ public class Draw extends JPanel implements Runnable{
 		int i,j;
 		int x=0;
 		int h=0;
+		
 		//ve nen`
 		g.setColor(Color.cyan);
 		g.fillRect(0, 0, getWidth(), getHeight());
@@ -57,6 +58,7 @@ public class Draw extends JPanel implements Runnable{
 			blockD.tangY();
 			repaint();
 			checkD.checkBottom();
+			
 		}
 	}
 
