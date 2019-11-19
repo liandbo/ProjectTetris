@@ -77,10 +77,10 @@ public class Block extends JPanel{
 		g.setColor(Color.red);
 		switch (a) {
 		case 1:								//hinh vuong
-			g.fillRect(x, y, 100, 100);
+			g.fillRect(x, y-50, 100, 100);
 			break;
 		case 2:								//h�nh line
-			g.fillRect(x, y, 50, 200);
+			g.fillRect(x, y-150, 50, 200);
 			break;
 		case 3:								//h�nh chu T
 			g.fillRect(x, y, 100, 50);
@@ -96,12 +96,12 @@ public class Block extends JPanel{
 			g.fillRect(x, y-50, 50, 100);
 			break;
 		case 6:								//hinh S
-			g.fillRect(x, y, 100, 50);
-			g.fillRect(x-50, y+50, 100, 50);
+			g.fillRect(x, y-50, 100, 50);
+			g.fillRect(x-50, y, 100, 50);
 			break;
 		case 7: 							//hinh Z
-			g.fillRect(x-50, y, 100, 50);
-			g.fillRect(x, y+50, 100, 50);
+			g.fillRect(x-50, y-50, 100, 50);
+			g.fillRect(x, y, 100, 50);
 		default:
 			break;
 		}
