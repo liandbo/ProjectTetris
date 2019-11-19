@@ -39,6 +39,9 @@ public class Screen extends JFrame {
 					blockS.tangY();
 					repaint();
 				}
+				if(keyCode == KeyEvent.VK_UP) {
+					
+				}
 			}
 			
 		});

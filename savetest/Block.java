@@ -11,7 +11,8 @@ public class Block extends JPanel{
 	private static int x=200;
 	private static int y=0;
 	private int i,j;
-	private static int a=3;
+	private static int a=5;
+	private static int xoay= 1;
 
 
 	public int getX() {
@@ -60,6 +61,15 @@ public class Block extends JPanel{
 		a = rd.nextInt(7)+1;
 	}
 	
+	//xoay block
+	public void xoayblock() {
+		if (xoay == 4) {
+			xoay =1;
+		} else {
+			xoay++;
+		}
+	}
+	
 	
 	//ve block
 	public void paint(Graphics g) {
@@ -82,7 +92,7 @@ public class Block extends JPanel{
 			g.fillRect(x, y-50, 50, 50);
 			break;
 		case 5:								//hinh L
-			g.fillRect(x, y, -100, 50);
+			g.fillRect(x-100, y, 100, 50);
 			g.fillRect(x, y-50, 50, 100);
 			break;
 		case 6:								//hinh S
