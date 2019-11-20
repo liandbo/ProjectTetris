@@ -14,6 +14,7 @@ public class Screen extends JFrame {
 	
 	public Screen() {
 		checkS.setboard();
+		setTitle("Game xep hinh VN chat luong cao.");
 		setSize(800, 800);
 		setVisible(true);
 		setLocation(600, 100);
