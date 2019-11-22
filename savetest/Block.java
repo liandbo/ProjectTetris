@@ -73,7 +73,7 @@ public class Block extends JPanel{
 	
 	//ve block
 	public void paint(Graphics g) {
-		a=3;
+		
 		g.setColor(Color.red);
 		switch (a) {
 		case 1:								//hinh vuong
@@ -117,32 +117,86 @@ public class Block extends JPanel{
 			case 4:
 				g.fillRect(x, y-50, 50, 150);
 				g.fillRect(x-50, y, 50, 50);
+				
 			}
 			break;
 			
 			
 			
-		case 4:								//hinh chu j
+		case 4:								//hinh J
 			switch (xoay) {
 			case 1:
-				
+				g.fillRect(x-100, y-50, 50, 50);
+				g.fillRect(x-100, y, 150, 50);
 				break;
-
-			default:
+			case 2:
+				g.fillRect(x, y-100, 50, 150);
+				g.fillRect(x-50, y, 50, 50);
+				break;
+			case 3:
+				g.fillRect(x-100, y-50, 150, 50);
+				g.fillRect(x-100, y, 50, 50);
+				break;
+			case 4:
+				g.fillRect(x-100, y-100, 50, 150);
+				g.fillRect(x-50, y, 50, 50);
 				break;
 			}
 			break;
+	
+			
 		case 5:								//hinh L
-			g.fillRect(x-100, y, 100, 50);
-			g.fillRect(x, y-50, 50, 100);
-			break;
+			switch (xoay) {
+			case 1:
+				g.fillRect(x-100, y, 100, 50);
+				g.fillRect(x, y-50, 50, 100);
+				break;
+			case 2:
+				g.fillRect(x-50, y-50, 100, 50);
+				g.fillRect(x, y, 50, 100);
+				break;
+			case 3:
+				g.fillRect(x-50, y-50, 100, 50);
+				g.fillRect(x-100, y-50, 50, 100);
+				break;
+			case 4:
+				g.fillRect(x-100, y, 100, 50);
+				g.fillRect(x-100, y-100, 50, 100);
+				break;
+			}
+		break;
+			
+		
 		case 6:								//hinh S
-			g.fillRect(x, y-50, 100, 50);
-			g.fillRect(x-50, y, 100, 50);
+			switch (xoay){
+			case 1:
+			case 3:
+				g.fillRect(x, y-50, 100, 50);
+				g.fillRect(x-50, y, 100, 50);
+				break;
+			case 2:
+			case 4:
+				g.fillRect(x-50, y-100, 50, 100);
+				g.fillRect(x, y-50, 50, 100);
+				break;
+			}
 			break;
+			
+			
 		case 7: 							//hinh Z
-			g.fillRect(x-50, y-50, 100, 50);
-			g.fillRect(x, y, 100, 50);
+			switch (xoay){
+			case 1:
+			case 3:
+				g.fillRect(x-50, y-50, 100, 50);
+				g.fillRect(x, y, 100, 50);
+			break;
+			case 2:
+			case 4:
+				g.fillRect(x+50, y-100, 50, 100);
+				g.fillRect(x, y-50, 50, 100);
+			break;
+			}
+		break;
 		default:
 			break;
 		}
