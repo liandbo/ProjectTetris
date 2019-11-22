@@ -1,4 +1,4 @@
-package Test;
+package test;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -73,7 +73,7 @@ public class Block extends JPanel{
 	
 	//ve block
 	public void paint(Graphics g) {
-		
+		a=5;
 		g.setColor(Color.red);
 		switch (a) {
 		case 1:								//hinh vuong
@@ -126,46 +126,48 @@ public class Block extends JPanel{
 		case 4:								//hinh J
 			switch (xoay) {
 			case 1:
-				g.fillRect(x-100, y-50, 50, 50);
-				g.fillRect(x-100, y, 150, 50);
+				g.fillRect(x, y-50, 50, 150);
+				g.fillRect(x, y+50, 100, 50);
 				break;
 			case 2:
-				g.fillRect(x, y-100, 50, 150);
-				g.fillRect(x-50, y, 50, 50);
+				g.fillRect(x-50, y, 150, 50);
+				g.fillRect(x-50, y, 50, 100);
 				break;
 			case 3:
-				g.fillRect(x-100, y-50, 150, 50);
-				g.fillRect(x, y, 50, 50);
+				g.fillRect(x, y-50, 50, 150);
+				g.fillRect(x-50, y-50, 50, 50);
 				break;
 			case 4:
-				g.fillRect(x-100, y-100, 50, 150);
-				g.fillRect(x-50, y-100, 50, 50);
+				g.fillRect(x-50, y, 150, 50);
+				g.fillRect(x+50, y-50, 50, 50);
 				break;
 			}
 			break;
 	
 			
+			
 		case 5:								//hinh L
 			switch (xoay) {
 			case 1:
-				g.fillRect(x-100, y, 100, 50);
-				g.fillRect(x, y-50, 50, 100);
+				g.fillRect(x, y-50, 50, 150);
+				g.fillRect(x-50, y+50, 50, 50);
 				break;
 			case 2:
-				g.fillRect(x-50, y-50, 100, 50);
-				g.fillRect(x, y, 50, 100);
+				g.fillRect(x-50, y, 150, 50);
+				g.fillRect(x-50, y-50, 50, 50);
 				break;
 			case 3:
-				g.fillRect(x-50, y-50, 100, 50);
-				g.fillRect(x-100, y-50, 50, 100);
+				g.fillRect(x, y-50, 50, 150);
+				g.fillRect(x+50, y-50, 50, 50);
 				break;
 			case 4:
-				g.fillRect(x-100, y, 100, 50);
-				g.fillRect(x-100, y-100, 50, 100);
+				g.fillRect(x-50, y, 150, 50);
+				g.fillRect(x+50, y+50, 50, 50);
 				break;
 			}
 		break;
 			
+		
 		
 		case 6:								//hinh S
 			switch (xoay){
@@ -181,6 +183,7 @@ public class Block extends JPanel{
 				break;
 			}
 			break;
+			
 			
 			
 		case 7: 							//hinh Z
@@ -200,6 +203,8 @@ public class Block extends JPanel{
 		default:
 			break;
 		}
+		
+		
 		
 		//ve block co san
 		g.setColor(Color.red);
