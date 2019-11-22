@@ -125,7 +125,7 @@ public class Block extends JPanel{
 		case 4:								//hinh chu j
 			switch (xoay) {
 			case 1:
-				g.fillRect(x, y, width, height);
+				
 				break;
 
 			default:
