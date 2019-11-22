@@ -73,23 +73,64 @@ public class Block extends JPanel{
 	
 	//ve block
 	public void paint(Graphics g) {
-		
+		a=3;
 		g.setColor(Color.red);
 		switch (a) {
 		case 1:								//hinh vuong
 			g.fillRect(x, y-50, 100, 100);
 			break;
-		case 2:								//h�nh line
-			g.fillRect(x, y-150, 50, 200);
+			
+			
+			
+		case 2:								//hinh line
+			switch (xoay) {
+			case 1:
+			case 3:
+				g.fillRect(x, y, 50, 150);
+				g.fillRect(x, y-50, 50, 50);
+				break;
+			case 2:
+			case 4:
+				g.fillRect(x, y, 150, 50);
+				g.fillRect(x-50, y, 50, 50);
+				break;
+			}
 			break;
-		case 3:								//h�nh chu T
-			g.fillRect(x, y, 100, 50);
-			g.fillRect(x-50, y, 50, 50);
-			g.fillRect(x, y-50, 50, 100);
+			
+			
+			
+			
+		case 3:								//hinh chu T
+			switch (xoay) {
+			case 1:
+				g.fillRect(x-50, y, 150, 50);
+				g.fillRect(x, y-50, 50, 50);
+				break;
+			case 2:
+				g.fillRect(x, y-50, 50, 150);
+				g.fillRect(x, y, 100, 50);
+				break;
+			case 3:
+				g.fillRect(x-50, y, 150, 50);
+				g.fillRect(x, y, 50, 100);
+				break;
+			case 4:
+				g.fillRect(x, y-50, 50, 150);
+				g.fillRect(x-50, y, 50, 50);
+			}
 			break;
+			
+			
+			
 		case 4:								//hinh chu j
-			g.fillRect(x, y, 150, 50);
-			g.fillRect(x, y-50, 50, 50);
+			switch (xoay) {
+			case 1:
+				g.fillRect(x, y, width, height);
+				break;
+
+			default:
+				break;
+			}
 			break;
 		case 5:								//hinh L
 			g.fillRect(x-100, y, 100, 50);

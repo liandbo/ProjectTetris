@@ -41,7 +41,8 @@ public class Screen extends JFrame {
 					repaint();
 				}
 				if(keyCode == KeyEvent.VK_UP) {
-					
+					blockS.xoayblock();
+					repaint();
 				}
 			}
 			
