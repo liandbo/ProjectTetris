@@ -1,4 +1,4 @@
-package test;
+package Test;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -11,7 +11,7 @@ public class Block extends JPanel{
 	private static int x=200;
 	private static int y=0;
 	private int i,j;
-	private static int a=5;
+	private static int a=4;
 	private static int xoay= 1;
 
 
@@ -135,11 +135,11 @@ public class Block extends JPanel{
 				break;
 			case 3:
 				g.fillRect(x-100, y-50, 150, 50);
-				g.fillRect(x-100, y, 50, 50);
+				g.fillRect(x, y, 50, 50);
 				break;
 			case 4:
 				g.fillRect(x-100, y-100, 50, 150);
-				g.fillRect(x-50, y, 50, 50);
+				g.fillRect(x-50, y-100, 50, 50);
 				break;
 			}
 			break;
