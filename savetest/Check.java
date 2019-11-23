@@ -68,7 +68,7 @@ public class Check {
 //		return((x>400||x==0)||(a==2&&(x>=400||x==0)))?false:true;
 //	}
 	
-	public int automoveRight() {
+	public int automove() {
 		int a=blockC.getA();
 		int xoay=blockC.getXoay();
 		int x=blockC.getX();
@@ -77,27 +77,41 @@ public class Check {
 			return 0;
 		case 2:
 			if(xoay==1 || xoay ==3) {
-				if (x==450) return 100;
-				if (x==400) return 50;
+				if (x==450) return -100;
+				if (x==400) return -50;
+			} else 
+			if (xoay==2 || xoay==4) {
+				if (x==0) return 50;
 			} else return 0;
 		case 3:
 			if (xoay==4) {
-				if (x==450) return 50;
+				if (x==450) return -50;
+			} else 
+			if (xoay==2) {
+				if (x==0) return 50;
 			} else return 0;
 		case 4:
 			if (xoay==3) {
-				if(x==450) return 50;
+				if(x==450) return -50;
+			} else 
+			if (xoay==1) {
+				if (x==0) return 50;
 			} else return 0;
 		case 5:
 			if (xoay==1) {
-				if(x==450) return 50;
+				if(x==450) return -50;
+			} else
+			if (xoay==3) {
+				if(x==0) return 50;
 			} else return 0;
 		case 6:
 			if ( xoay==2 || xoay==4) {
-				if (x==450) return 50;
+				if (x==450) return -50;
 			} else return 0;
 		case 7:
-			return 0;
+			if (xoay==2 || xoay==4) {
+				if (x==0) return 50;
+			} else return 0;
 		default:
 			return 0;
 		}
