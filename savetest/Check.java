@@ -60,13 +60,7 @@ public class Check {
 		default:return true;
 		}
 		
-	}
-	
-//	public boolean checkRotate() {
-//		int x=blockC.getX();
-//		int a=blockC.getA();
-//		return((x>400||x==0)||(a==2&&(x>=400||x==0)))?false:true;
-//	}
+	}	
 	
 	public int automove() {
 		int a=blockC.getA();
