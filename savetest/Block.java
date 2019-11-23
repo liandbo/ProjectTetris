@@ -11,7 +11,7 @@ public class Block extends JPanel{
 	private static int x=200;
 	private static int y=0;
 	private int i,j;
-	private static int a=4;
+	private static int a=1;
 	private static int xoay= 1;
 
 
@@ -67,8 +67,20 @@ public class Block extends JPanel{
 	
 	//random loai block
 	public void random() {
+		int a1=0;
+		int a2=0;
+		boolean trung=true;
 		Random rd = new Random();
+		a2=a1;
+		a1=a;
 		a = rd.nextInt(7)+1;
+		while (trung == true) {
+			if (a!=a1 && a!=a2) {
+				trung = false;
+			} else
+				a = rd.nextInt(7)+1;
+		}
+		trung = true;
 	}
 	
 	//xoay block
