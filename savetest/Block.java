@@ -28,12 +28,12 @@ public class Block extends JPanel{
 		return y;
 	}
 	
-	public static int getA()
+	public int getA()
 	{
 		return a;
 	}
 	
-	public static int getXoay()
+	public int getXoay()
 	{
 		return xoay;
 	}

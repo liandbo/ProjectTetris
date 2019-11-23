@@ -30,8 +30,8 @@ public class Check {
 		}
 	}
 	public boolean checkSideRight() {
-		int a=Block.getA();
-		int xoay=Block.getXoay();
+		int a=blockC.getA();
+		int xoay=blockC.getXoay();
 		int x=blockC.getX();
 		switch (a) {
 		case 1:return(x<400)?true:false;
@@ -46,8 +46,8 @@ public class Check {
 	}
 	
 	public boolean checkSideLeft() {
-		int a=Block.getA();
-		int xoay=Block.getXoay();
+		int a=blockC.getA();
+		int xoay=blockC.getXoay();
 		int x=blockC.getX();
 		switch(a) {
 		case 2:return(x>50)?true:((xoay==1||xoay==3)&&x==50)?true:false;
@@ -63,7 +63,7 @@ public class Check {
 	
 	public boolean checkRotate() {
 		int x=blockC.getX();
-		int a=Block.getA();
+		int a=blockC.getA();
 		return((x>400||x==0)||(a==2&&(x>=400||x==0)))?false:true;
 	}
 	
