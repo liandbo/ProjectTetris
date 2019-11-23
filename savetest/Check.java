@@ -22,11 +22,12 @@ public class Check {
 		int temp;
 		
 		if(blockC.getY() == 700) {
-			blockC.setY(0);
-			blockC.setX(200);
 			temp=blockC.getX()/50;
 			board[temp][14]=1;
+			blockC.setY(0);
+			blockC.setX(200);
 			blockC.random();
+			blockC.setXoay(1);
 		}
 	}
 	public boolean checkSideRight() {
@@ -61,10 +62,45 @@ public class Check {
 		
 	}
 	
-	public boolean checkRotate() {
-		int x=blockC.getX();
+//	public boolean checkRotate() {
+//		int x=blockC.getX();
+//		int a=blockC.getA();
+//		return((x>400||x==0)||(a==2&&(x>=400||x==0)))?false:true;
+//	}
+	
+	public int automoveRight() {
 		int a=blockC.getA();
-		return((x>400||x==0)||(a==2&&(x>=400||x==0)))?false:true;
+		int xoay=blockC.getXoay();
+		int x=blockC.getX();
+		switch (a) {
+		case 1:
+			return 0;
+		case 2:
+			if(xoay==1 || xoay ==3) {
+				if (x==450) return 100;
+				if (x==400) return 50;
+			} else return 0;
+		case 3:
+			if (xoay==4) {
+				if (x==450) return 50;
+			} else return 0;
+		case 4:
+			if (xoay==3) {
+				if(x==450) return 50;
+			} else return 0;
+		case 5:
+			if (xoay==1) {
+				if(x==450) return 50;
+			} else return 0;
+		case 6:
+			if ( xoay==2 || xoay==4) {
+				if (x==450) return 50;
+			} else return 0;
+		case 7:
+			return 0;
+		default:
+			return 0;
+		}
 	}
 	
 }

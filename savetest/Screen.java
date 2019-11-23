@@ -43,7 +43,9 @@ public class Screen extends JFrame {
 					repaint();
 				}
 				if(keyCode == KeyEvent.VK_UP) {
-					if(checkS.checkRotate())
+					int x = blockS.getX();
+					int move = checkS.automoveRight();
+					blockS.setX(x-move);
 					blockS.xoayblock();
 					repaint();
 				}

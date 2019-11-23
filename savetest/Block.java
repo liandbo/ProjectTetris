@@ -15,6 +15,18 @@ public class Block extends JPanel{
 	private static int xoay= 1;
 
 
+	public int getI() {
+		return i;
+	}
+
+	public int getJ() {
+		return j;
+	}
+
+	public static void setXoay(int xoay) {
+		Block.xoay = xoay;
+	}
+
 	public int getX() {
 		return x;
 	}
@@ -33,12 +45,22 @@ public class Block extends JPanel{
 		return a;
 	}
 	
-	public int getXoay()
-	{
+	public static int getXoay() {
 		return xoay;
 	}
-	
-	
+
+	public void setI(int i) {
+		this.i = i;
+	}
+
+	public void setJ(int j) {
+		this.j = j;
+	}
+
+	public static void setA(int a) {
+		Block.a = a;
+	}
+
 	public static void setY(int y) {
 		Block.y = y;
 	}
@@ -95,7 +117,7 @@ public class Block extends JPanel{
 	
 	//ve block
 	public void paint(Graphics g) {
-		//a=2;
+//		a=7;
 		g.setColor(Color.red);
 		switch (a) {
 		case 1:								//hinh vuong
@@ -145,7 +167,7 @@ public class Block extends JPanel{
 			
 			
 			
-		case 4:								//hinh J
+		case 4:								//hinh L
 			switch (xoay) {
 			case 1:
 				g.fillRect(x, y-50, 50, 150);
@@ -168,7 +190,7 @@ public class Block extends JPanel{
 	
 			
 			
-		case 5:								//hinh L
+		case 5:								//hinh j
 			switch (xoay) {
 			case 1:
 				g.fillRect(x, y-50, 50, 150);
