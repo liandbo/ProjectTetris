@@ -73,8 +73,6 @@ public class Check {
 			if(xoay==1 || xoay ==3) {
 				if (x==450) return -100;
 				if (x==400) return -50;
-			} else 
-			if (xoay==2 || xoay==4) {
 				if (x==0) return 50;
 			} else return 0;
 		case 3:

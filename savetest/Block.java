@@ -117,7 +117,7 @@ public class Block extends JPanel{
 	
 	//ve block
 	public void paint(Graphics g) {
-//		a=7;
+//		a=2;
 		g.setColor(Color.red);
 		switch (a) {
 		case 1:								//hinh vuong
