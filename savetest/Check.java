@@ -67,45 +67,14 @@ public class Check {
 		int xoay=blockC.getXoay();
 		int x=blockC.getX();
 		switch (a) {
-		case 1:
-			return 0;
-		case 2:
-			if(xoay==1 || xoay ==3) {
-				if (x==450) return -100;
-				if (x==400) return -50;
-				if (x==0) return 50;
-			} else return 0;
-		case 3:
-			if (xoay==4) {
-				if (x==450) return -50;
-			} else 
-			if (xoay==2) {
-				if (x==0) return 50;
-			} else return 0;
-		case 4:
-			if (xoay==3) {
-				if(x==450) return -50;
-			} else 
-			if (xoay==1) {
-				if (x==0) return 50;
-			} else return 0;
-		case 5:
-			if (xoay==1) {
-				if(x==450) return -50;
-			} else
-			if (xoay==3) {
-				if(x==0) return 50;
-			} else return 0;
-		case 6:
-			if ( xoay==2 || xoay==4) {
-				if (x==450) return -50;
-			} else return 0;
-		case 7:
-			if (xoay==2 || xoay==4) {
-				if (x==0) return 50;
-			} else return 0;
-		default:
-			return 0;
+		case 1:return 0;
+		case 2:return(xoay==1||xoay==3)?(x==450)?-100:(x==400)?-50:(x==0)?50:0:0;
+		case 3:return(xoay==4&&x==450)?-50:(xoay==2&&x==0)?50:0;
+		case 4:return(xoay==3&&x==450)?-50:(xoay==1&&x==0)?50:0;
+		case 5:return(xoay==1&&x==450)?-50:(xoay==3&&x==0)?50:0;
+		case 6:return((xoay==2||xoay==4)&&x==450)?-50:0;
+		case 7:return((xoay==2||xoay==4)&&x==0)?50:0;
+		default:return 0;
 		}
 	}
 	
