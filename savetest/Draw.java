@@ -55,6 +55,7 @@ public class Draw extends JPanel implements Runnable{
 				e.printStackTrace();
 			}
 			
+			
 			blockD.tangY();
 			repaint();
 			checkD.checkBottom();

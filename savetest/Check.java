@@ -3,19 +3,9 @@ package test;
 public class Check {
 	
 	private Block blockC = new Block();
+	private Data dataC = new Data();
 	
-	public static int[][] board = new int[10][16];
-	private int i;
-	private int j;
 	
-	//tao board de check dieu kien
-	public void setboard() {
-		for(i=0;i<10;i++) {
-			for(j=0;j<16;j++) {
-				board[i][j]=0;
-			}
-		}
-	}
 	
 	//check cham day
 	public void checkBottom() {
@@ -23,13 +13,14 @@ public class Check {
 		
 		if(blockC.getY() == 700) {
 			temp=blockC.getX()/50;
-			board[temp][14]=1;
+			dataC.board[temp][14]=1;
 			blockC.setY(0);
 			blockC.setX(200);
 			blockC.random();
 			blockC.setXoay(1);
 		}
 	}
+	
 	public boolean checkSideRight() {
 		int a=blockC.getA();
 		int xoay=blockC.getXoay();

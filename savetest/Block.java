@@ -8,6 +8,8 @@ import javax.swing.JPanel;
 
 public class Block extends JPanel{
 	
+	private Data dataB = new Data();
+	
 	private static int x=200;
 	private static int y=0;
 	private int i,j;
@@ -254,7 +256,7 @@ public class Block extends JPanel{
 		g.setColor(Color.red);
 		for(i=0;i<10;i++) {
 			for(j=0;j<15;j++) {
-				if(Check.board[i][j] == 1) {
+				if(dataB.board[i][j] == 1) {
 					g.fillRect(i*50, 700, 50, 50);
 				}
 			}

@@ -10,10 +10,11 @@ public class Screen extends JFrame {
 	private Draw drawS = new Draw();
 	private Block blockS = new Block();
 	private Check checkS = new Check();
+	private Data dataS = new Data();
 		
 	
 	public Screen() {
-		checkS.setboard();
+		dataS.setboard();
 		setTitle("Game xep hinh VN chat luong cao.");
 		setSize(800, 800);
 		setVisible(true);
