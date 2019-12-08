@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 
 public class Block extends JPanel{
 	
-	private Data dataB = new Data();
+	private Cell cellB = new Cell();
 	
 	private static int x=200;
 	private static int y=0;
@@ -119,11 +119,16 @@ public class Block extends JPanel{
 	
 	//ve block
 	public void paint(Graphics g) {
-		a=7;
+		a=1;
 		g.setColor(Color.red);
 		switch (a) {
 		case 1:								//hinh vuong
-			g.fillRect(x, y-50, 100, 100);
+//			g.fillRect(x, y-50, 100, 100);
+			
+			cellB.cell(g, x, y);
+			cellB.cell(g, x+50, y);
+			cellB.cell(g, x, y+50);
+			cellB.cell(g, x+50, y+50);
 			break;
 			
 			
@@ -241,8 +246,8 @@ public class Block extends JPanel{
 			break;
 			case 2:
 			case 4:
-				g.fillRect(x+50, y-100, 50, 100);
-				g.fillRect(x, y-50, 50, 100);
+				g.fillRect(x+50, y-50, 50, 100);
+				g.fillRect(x, y, 50, 100);
 			break;
 			}
 		break;
@@ -256,7 +261,7 @@ public class Block extends JPanel{
 		g.setColor(Color.red);
 		for(i=0;i<10;i++) {
 			for(j=0;j<15;j++) {
-				if(dataB.board[i][j] == 1) {
+				if(Data.board[i][j] == 1) {
 					g.fillRect(i*50, 700, 50, 50);
 				}
 			}
