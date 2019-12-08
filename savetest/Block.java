@@ -74,6 +74,10 @@ public class Block extends JPanel{
 		if(y<700) {
 			if (f1 && f2 && f3 && f4) {
 				y+=50;
+				y1+=50;
+				y2+=50;
+				y3+=50;
+				y4+=50;
 			}
 		}
 	}
@@ -83,6 +87,10 @@ public class Block extends JPanel{
 	public void tangX() {
 		if(x<450) {
 			x+=50;
+			x1+=50;
+			x2+=50;
+			x3+=50;
+			x4+=50;
 		}
 	}
 	
@@ -90,6 +98,10 @@ public class Block extends JPanel{
 	public void giamX() {
 		if(x>0) {
 			x-=50;
+			x1-=50;
+			x2-=50;
+			x3-=50;
+			x4-=50;
 		}
 	}
 	
@@ -132,7 +144,7 @@ public class Block extends JPanel{
 	
 	//ve block
 	public void paint(Graphics g) {
-		a=2;
+		a=1;
 		g.setColor(Color.red);
 		switch (a) {
 		case 1:								//hinh vuong	
