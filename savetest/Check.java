@@ -8,7 +8,7 @@ public class Check {
 	
 	//checkBlockCanResetChua
 	public boolean ResetChua (){
-		if ( !Block.f1 || !Block.f2 || !Block.f3 || !Block.f4) 
+		if ( !Block.f1 || !Block.f2 || !Block.f3 || !Block.f4 ) 
 			return true;
 		return false;
 	}

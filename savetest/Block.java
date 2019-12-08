@@ -144,13 +144,13 @@ public class Block extends JPanel{
 	
 	//ve block
 	public void paint(Graphics g) {
-		a=1;
+		a=2;
 		g.setColor(Color.red);
 		switch (a) {
 		case 1:								//hinh vuong	
 			x1=x;		y1=y;
 			x2=x+50;	y2=y;
-			x3=x;		y2=y+50;
+			x3=x;		y3=y+50;
 			x4=x+50;	y4=y+50;
 			f1=cellB.cellDF(g, x, y);
 			f2=cellB.cellDF(g, x+50, y);
@@ -175,6 +175,10 @@ public class Block extends JPanel{
 				break;
 			case 2:
 			case 4:
+				x1=x;		y1=y;
+				x2=x-50;	y2=y;
+				x3=x+50;	y3=y;
+				x4=x+100;	y4=y;
 				f1=cellB.cellDF(g, x, y);
 				f2=cellB.cellDF(g, x-50, y);
 				f3=cellB.cellDF(g, x+50, y);
