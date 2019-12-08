@@ -16,6 +16,8 @@ public class Block extends JPanel{
 	private static int a=1;
 	private static int xoay= 1;
 	public static boolean f1,f2,f3,f4;
+	public static int x1,x2,x3,x4;
+	public static int y1,y2,y3,y4;
 
 	public int getI() {
 		return i;
@@ -133,6 +135,10 @@ public class Block extends JPanel{
 		g.setColor(Color.red);
 		switch (a) {
 		case 1:								//hinh vuong	
+			x1=x;		y1=y;
+			x2=x+50;	y2=y;
+			x3=x;		y2=y+50;
+			x4=x+50;	y4=y+50;
 			f1=cellB.cellDF(g, x, y);
 			f2=cellB.cellDF(g, x+50, y);
 			f3=cellB.cellDF(g, x, y+50);
