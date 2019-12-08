@@ -4,25 +4,13 @@ public class Check {
 	
 	private Block blockC = new Block();
 	private Data dataC = new Data();
-	
-	
-	
-	//check cham day
-	public boolean checkBottom() {
-		
-		if(blockC.getY() == 700) {
-			return true;
-		}
-		
-		return false;
-	}
+
 	
 	//checkBlockCanResetChua
-	public void ResetChua (){
-		if ( checkBottom() || !Block.f1 || !Block.f2 || !Block.f3 || !Block.f4) {
-			blockC.resetBlock();
-			
-		}
+	public boolean ResetChua (){
+		if ( !Block.f1 || !Block.f2 || !Block.f3 || !Block.f4) 
+			return true;
+		return false;
 	}
 	
 	//check dung tuong phai 

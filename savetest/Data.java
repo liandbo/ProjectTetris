@@ -18,6 +18,7 @@ public class Data {
 		}
 	}
 	
+	//Luu anh da co vao data
 	public void LuuHinh(int x, int y) {
 		int xx = x/50;
 		int yy = y/50;

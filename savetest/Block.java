@@ -126,12 +126,13 @@ public class Block extends JPanel{
 		x=200;
 		random();
 		xoay=1;
+		f1=true; f2=true; f3=true; f4=true;
 	}
 	
 	
 	//ve block
 	public void paint(Graphics g) {
-//		a=7;
+		a=2;
 		g.setColor(Color.red);
 		switch (a) {
 		case 1:								//hinh vuong	
@@ -151,6 +152,10 @@ public class Block extends JPanel{
 			switch (xoay) {
 			case 1:
 			case 3:			
+				x1=x;		y1=y;
+				x2=x;		y2=y-50;
+				x3=x;		y3=y+50;
+				x4=x;		y4=y+100;
 				f1=cellB.cellDF(g, x, y);
 				f2=cellB.cellDF(g, x, y-50);
 				f3=cellB.cellDF(g, x, y+50);
@@ -310,9 +315,9 @@ public class Block extends JPanel{
 		//ve block co san
 		g.setColor(Color.red);
 		for(i=0;i<10;i++) {
-			for(j=0;j<15;j++) {
+			for(j=0;j<16;j++) {
 				if(Data.board[i][j] == 1) {
-					g.fillRect(i*50, 700, 50, 50);
+					g.fillRect(i*50, j*50, 50, 50);
 				}
 			}
 		}

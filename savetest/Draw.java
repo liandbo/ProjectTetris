@@ -9,6 +9,7 @@ public class Draw extends JPanel implements Runnable{
 	
 	private Block blockD = new Block();
 	private Check checkD = new Check();
+	private Data dataD = new Data();
 	
 	public Draw() {
 		Thread threadD = new Thread(this);
@@ -55,10 +56,17 @@ public class Draw extends JPanel implements Runnable{
 				e.printStackTrace();
 			}
 			
-			
 			blockD.tangY();
 			repaint();
-			checkD.ResetChua();
+			if(checkD.ResetChua()) {
+				dataD.LuuHinh(Block.x1, Block.y1);
+				dataD.LuuHinh(Block.x2, Block.y2);
+				dataD.LuuHinh(Block.x3, Block.y3);
+				dataD.LuuHinh(Block.x4, Block.y4);
+				blockD.resetBlock();
+			}
+			
+			
 			
 		}
 	}
