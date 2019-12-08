@@ -58,7 +58,7 @@ public class Draw extends JPanel implements Runnable{
 			
 			blockD.tangY();
 			repaint();
-			checkD.checkBottom();
+			checkD.ResetChua();
 			
 		}
 	}

@@ -4,7 +4,16 @@ import java.awt.Graphics;
 
 public class Cell {
 	
-	public void cell(Graphics g, int a, int b) {
+	
+	
+	//ve cell va check cell co roi dc ko
+	public boolean cellDF(Graphics g, int a, int b) {
 		g.fillRect(a, b, 50, 50);
+		
+		if ( Data.board[a/50][b/50+1]==1 ) return false;
+		return true;
 	}
+	
+	
+	
 }

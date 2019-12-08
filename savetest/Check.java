@@ -8,19 +8,24 @@ public class Check {
 	
 	
 	//check cham day
-	public void checkBottom() {
-		int temp;
+	public boolean checkBottom() {
 		
 		if(blockC.getY() == 700) {
-			temp=blockC.getX()/50;
-			dataC.board[temp][14]=1;
-			blockC.setY(0);
-			blockC.setX(200);
-			blockC.random();
-			blockC.setXoay(1);
+			return true;
+		}
+		
+		return false;
+	}
+	
+	//checkBlockCanResetChua
+	public void ResetChua (){
+		if ( checkBottom() || !Block.f1 || !Block.f2 || !Block.f3 || !Block.f4) {
+			blockC.resetBlock();
+			
 		}
 	}
 	
+	//check dung tuong phai 
 	public boolean checkSideRight() {
 		int a=blockC.getA();
 		int xoay=blockC.getXoay();
@@ -37,6 +42,7 @@ public class Check {
 		}
 	}
 	
+	//check dung tuong trai
 	public boolean checkSideLeft() {
 		int a=blockC.getA();
 		int xoay=blockC.getXoay();
@@ -53,6 +59,7 @@ public class Check {
 		
 	}	
 	
+	//neu dung wa gan tuong se tu dong dich chuyen ra 1 chut
 	public int automove() {
 		int a=blockC.getA();
 		int xoay=blockC.getXoay();
