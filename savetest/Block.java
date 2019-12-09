@@ -152,10 +152,10 @@ public class Block extends JPanel{
 			x2=x+50;	y2=y;
 			x3=x;		y3=y+50;
 			x4=x+50;	y4=y+50;
-			f1=cellB.cellDF(g, x, y);
-			f2=cellB.cellDF(g, x+50, y);
-			f3=cellB.cellDF(g, x, y+50);
-			f4=cellB.cellDF(g, x+50, y+50);
+			f1=cellB.cellDF(g, x1, y1);
+			f2=cellB.cellDF(g, x2, y2);
+			f3=cellB.cellDF(g, x3, y3);
+			f4=cellB.cellDF(g, x4, y4);
 			break;
 			
 			
@@ -168,10 +168,10 @@ public class Block extends JPanel{
 				x2=x;		y2=y-50;
 				x3=x;		y3=y+50;
 				x4=x;		y4=y+100;
-				f1=cellB.cellDF(g, x, y);
-				f2=cellB.cellDF(g, x, y-50);
-				f3=cellB.cellDF(g, x, y+50);
-				f4=cellB.cellDF(g, x, y+100);
+				f1=cellB.cellDF(g, x1, y1);
+				f2=cellB.cellDF(g, x2, y2);
+				f3=cellB.cellDF(g, x3, y3);
+				f4=cellB.cellDF(g, x4, y4);
 				break;
 			case 2:
 			case 4:
@@ -179,10 +179,10 @@ public class Block extends JPanel{
 				x2=x-50;	y2=y;
 				x3=x+50;	y3=y;
 				x4=x+100;	y4=y;
-				f1=cellB.cellDF(g, x, y);
-				f2=cellB.cellDF(g, x-50, y);
-				f3=cellB.cellDF(g, x+50, y);
-				f4=cellB.cellDF(g, x+100, y);
+				f1=cellB.cellDF(g, x1, y1);
+				f2=cellB.cellDF(g, x2, y2);
+				f3=cellB.cellDF(g, x3, y3);
+				f4=cellB.cellDF(g, x4, y4);
 				break;
 			}
 			break;
@@ -193,28 +193,44 @@ public class Block extends JPanel{
 		case 3:								//hinh chu T
 			switch (xoay) {
 			case 1:
-				f1=cellB.cellDF(g, x, y);
-				f2=cellB.cellDF(g, x-50, y);
-				f3=cellB.cellDF(g, x+50, y);
-				f4=cellB.cellDF(g, x, y-50);
+				x1=x;		y1=y;
+				x2=x-50;	y2=y;
+				x3=x+50;	y3=y;
+				x4=x;		y4=y-50;
+				f1=cellB.cellDF(g, x1, y1);
+				f2=cellB.cellDF(g, x2, y2);
+				f3=cellB.cellDF(g, x3, y3);
+				f4=cellB.cellDF(g, x4, y4);
 				break;
 			case 2:
-				f1=cellB.cellDF(g, x, y);
-				f2=cellB.cellDF(g, x+50, y);
-				f3=cellB.cellDF(g, x, y-50);
-				f4=cellB.cellDF(g, x, y+50);
+				x1=x;		y1=y;
+				x2=x+50;	y2=y;
+				x3=x;		y3=y-50;
+				x4=x;		y4=y+50;
+				f1=cellB.cellDF(g, x1, y1);
+				f2=cellB.cellDF(g, x2, y2);
+				f3=cellB.cellDF(g, x3, y3);
+				f4=cellB.cellDF(g, x4, y4);
 				break;
 			case 3:
-				f1=cellB.cellDF(g, x, y);
-				f2=cellB.cellDF(g, x-50, y);
-				f3=cellB.cellDF(g, x+50, y);
-				f4=cellB.cellDF(g, x, y+50);
+				x1=x;		y1=y;
+				x2=x-50;	y2=y;
+				x3=x+50;	y3=y;
+				x4=x;		y4=y+50;
+				f1=cellB.cellDF(g, x1, y1);
+				f2=cellB.cellDF(g, x2, y2);
+				f3=cellB.cellDF(g, x3, y3);
+				f4=cellB.cellDF(g, x4, y4);
 				break;
 			case 4:
-				f1=cellB.cellDF(g, x, y);
-				f2=cellB.cellDF(g, x-50, y);
-				f3=cellB.cellDF(g, x, y+50);
-				f4=cellB.cellDF(g, x, y-50);
+				x1=x;		y1=y;
+				x2=x-50;	y2=y;
+				x3=x;		y3=y+50;
+				x4=x;		y4=y-50;
+				f1=cellB.cellDF(g, x1, y1);
+				f2=cellB.cellDF(g, x2, y2);
+				f3=cellB.cellDF(g, x3, y3);
+				f4=cellB.cellDF(g, x4, y4);
 				
 			}
 			break;
@@ -224,28 +240,44 @@ public class Block extends JPanel{
 		case 4:								//hinh L
 			switch (xoay) {
 			case 1:
-				f1=cellB.cellDF(g, x, y);
-				f2=cellB.cellDF(g, x+50, y+50);
-				f3=cellB.cellDF(g, x, y-50);
-				f4=cellB.cellDF(g, x, y+50);
+				x1=x;		y1=y;
+				x2=x+50;	y2=y+50;
+				x3=x;		y3=y-50;
+				x4=x;		y4=y+50;
+				f1=cellB.cellDF(g, x1, y1);
+				f2=cellB.cellDF(g, x2, y2);
+				f3=cellB.cellDF(g, x3, y3);
+				f4=cellB.cellDF(g, x4, y4);
 				break;
 			case 2:
-				f1=cellB.cellDF(g, x, y);
-				f2=cellB.cellDF(g, x+50, y);
-				f3=cellB.cellDF(g, x-50, y);
-				f4=cellB.cellDF(g, x-50, y+50);
+				x1=x;		y1=y;
+				x2=x+50;	y2=y;
+				x3=x-50;	y3=y;
+				x4=x-50;	y4=y+50;
+				f1=cellB.cellDF(g, x1, y1);
+				f2=cellB.cellDF(g, x2, y2);
+				f3=cellB.cellDF(g, x3, y3);
+				f4=cellB.cellDF(g, x4, y4);
 				break;
 			case 3:
-				f1=cellB.cellDF(g, x, y);
-				f2=cellB.cellDF(g, x, y+50);
-				f3=cellB.cellDF(g, x, y-50);
-				f4=cellB.cellDF(g, x-50, y-50);
+				x1=x;		y1=y;
+				x2=x;		y2=y+50;
+				x3=x;		y3=y-50;
+				x4=x-50;	y4=y-50;
+				f1=cellB.cellDF(g, x1, y1);
+				f2=cellB.cellDF(g, x2, y2);
+				f3=cellB.cellDF(g, x3, y3);
+				f4=cellB.cellDF(g, x4, y4);
 				break;
 			case 4:
-				f1=cellB.cellDF(g, x, y);
-				f2=cellB.cellDF(g, x+50, y);
-				f3=cellB.cellDF(g, x-50, y);
-				f4=cellB.cellDF(g, x+50, y-50);
+				x1=x;		y1=y;
+				x2=x+50;	y2=y;
+				x3=x-50;	y3=y;
+				x4=x+50;	y4=y-50;
+				f1=cellB.cellDF(g, x1, y1);
+				f2=cellB.cellDF(g, x2, y2);
+				f3=cellB.cellDF(g, x3, y3);
+				f4=cellB.cellDF(g, x4, y4);
 				break;
 			}
 			break;
@@ -255,28 +287,44 @@ public class Block extends JPanel{
 		case 5:								//hinh j
 			switch (xoay) {
 			case 1:
-				f1=cellB.cellDF(g, x, y);
-				f2=cellB.cellDF(g, x, y+50);
-				f3=cellB.cellDF(g, x, y-50);
-				f4=cellB.cellDF(g, x-50, y+50);
+				x1=x;		y1=y;
+				x2=x;		y2=y+50;
+				x3=x;		y3=y-50;
+				x4=x-50;	y4=y+50;
+				f1=cellB.cellDF(g, x1, y1);
+				f2=cellB.cellDF(g, x2, y2);
+				f3=cellB.cellDF(g, x3, y3);
+				f4=cellB.cellDF(g, x4, y4);
 				break;
 			case 2:
-				f1=cellB.cellDF(g, x, y);
-				f2=cellB.cellDF(g, x+50, y);
-				f3=cellB.cellDF(g, x-50, y);
-				f3=cellB.cellDF(g, x-50, y-50);
+				x1=x;		y1=y;
+				x2=x+50;	y2=y;
+				x3=x-50;	y3=y;
+				x4=x-50;	y4=y-50;
+				f1=cellB.cellDF(g, x1, y1);
+				f2=cellB.cellDF(g, x2, y2);
+				f3=cellB.cellDF(g, x3, y3);
+				f4=cellB.cellDF(g, x4, y4);
 				break;
 			case 3:
-				f1=cellB.cellDF(g, x, y);
-				f2=cellB.cellDF(g, x, y-50);
-				f3=cellB.cellDF(g, x, y+50);
-				f4=cellB.cellDF(g, x+50, y-50);
+				x1=x;		y1=y;
+				x2=x;		y2=y-50;
+				x3=x;		y3=y+50;
+				x4=x+50;	y4=y-50;
+				f1=cellB.cellDF(g, x1, y1);
+				f2=cellB.cellDF(g, x2, y2);
+				f3=cellB.cellDF(g, x3, y3);
+				f4=cellB.cellDF(g, x4, y4);
 				break;
 			case 4:
-				f1=cellB.cellDF(g, x, y);
-				f2=cellB.cellDF(g, x-50, y);
-				f3=cellB.cellDF(g, x+50, y);
-				f4=cellB.cellDF(g, x+50, y+50);
+				x1=x;		y1=y;
+				x2=x-50;	y2=y;
+				x3=x+50;	y3=y;
+				x4=x+50;	y4=y+50;
+				f1=cellB.cellDF(g, x1, y1);
+				f2=cellB.cellDF(g, x2, y2);
+				f3=cellB.cellDF(g, x3, y3);
+				f4=cellB.cellDF(g, x4, y4);
 				break;
 			}
 		break;
@@ -287,17 +335,25 @@ public class Block extends JPanel{
 			switch (xoay){
 			case 1:
 			case 3:
-				f1=cellB.cellDF(g, x, y);
-				f2=cellB.cellDF(g, x-50, y);
-				f3=cellB.cellDF(g, x, y-50);
-				f4=cellB.cellDF(g, x+50, y-50);
+				x1=x;		y1=y;
+				x2=x-50;	y2=y;
+				x3=x;		y3=y-50;
+				x4=x+50;	y4=y-50;
+				f1=cellB.cellDF(g, x1, y1);
+				f2=cellB.cellDF(g, x2, y2);
+				f3=cellB.cellDF(g, x3, y3);
+				f4=cellB.cellDF(g, x4, y4);
 				break;
 			case 2:
 			case 4:
-				f1=cellB.cellDF(g, x, y);
-				f2=cellB.cellDF(g, x, y-50);
-				f3=cellB.cellDF(g, x+50, y);
-				f4=cellB.cellDF(g, x+50, y+50);
+				x1=x;		y1=y;
+				x2=x;		y2=y-50;
+				x3=x+50;	y3=y;
+				x4=x+50;	y4=y+50;
+				f1=cellB.cellDF(g, x1, y1);
+				f2=cellB.cellDF(g, x2, y2);
+				f3=cellB.cellDF(g, x3, y3);
+				f4=cellB.cellDF(g, x4, y4);
 				break;
 			}
 			break;
@@ -308,17 +364,25 @@ public class Block extends JPanel{
 			switch (xoay){
 			case 1:
 			case 3:
-				f1=cellB.cellDF(g, x, y);
-				f2=cellB.cellDF(g, x+50, y);
-				f3=cellB.cellDF(g, x-50, y-50);
-				f4=cellB.cellDF(g, x, y-50);
+				x1=x;		y1=y;
+				x2=x+50;	y2=y;
+				x3=x-50;	y3=y-50;
+				x4=x;		y4=y-50;
+				f1=cellB.cellDF(g, x1, y1);
+				f2=cellB.cellDF(g, x2, y2);
+				f3=cellB.cellDF(g, x3, y3);
+				f4=cellB.cellDF(g, x4, y4);
 			break;
 			case 2:
 			case 4:
-				f1=cellB.cellDF(g, x, y);
-				f2=cellB.cellDF(g, x, y+50);
-				f3=cellB.cellDF(g, x+50, y);
-				f4=cellB.cellDF(g, x+50, y-50);
+				x1=x;		y1=y;
+				x2=x;		y2=y+50;
+				x3=x+50;	y3=y;
+				x4=x+50;	y4=y-50;
+				f1=cellB.cellDF(g, x1, y1);
+				f2=cellB.cellDF(g, x2, y2);
+				f3=cellB.cellDF(g, x3, y3);
+				f4=cellB.cellDF(g, x4, y4);
 			break;
 			}
 		break;
@@ -331,7 +395,7 @@ public class Block extends JPanel{
 		//ve block co san
 		g.setColor(Color.red);
 		for(i=0;i<10;i++) {
-			for(j=0;j<16;j++) {
+			for(j=0;j<16;j++) {Block.java
 				if(Data.board[i][j] == 1) {
 					g.fillRect(i*50, j*50, 50, 50);
 				}
