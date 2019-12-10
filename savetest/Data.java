@@ -4,7 +4,7 @@ public class Data {
 	
 	private Block blockDa = new Block();
 	
-	public static int[][] board = new int[10][16];
+	public static int[][] board = new int[10][16];//10.16
 	private int i;
 	private int j;
 	
@@ -26,7 +26,11 @@ public class Data {
 	}
 		
 	public void TruHang() {
-		
 	}
+	
+	public boolean checkTetrino(int x,int y) {
+		return(board[x][y]==1)?false:true;
+	}
+	
 	
 }

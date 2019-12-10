@@ -30,12 +30,12 @@ public class Screen extends JFrame {
 			public void keyPressed(KeyEvent e) {
 				int keyCode = e.getKeyCode();
 				if(keyCode == KeyEvent.VK_LEFT) {
-					if(checkS.checkSideLeft())
+					if(checkS.checkSideLeft()&&checkS.checkSideLeftTetrino())
 					blockS.giamX();
 					repaint();
 				}
 				if(keyCode == KeyEvent.VK_RIGHT){
-					if(checkS.checkSideRight())
+					if(checkS.checkSideRight()&&checkS.checkSideRightTetrino())
 					blockS.tangX();
 					repaint();
 				}
