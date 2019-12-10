@@ -144,7 +144,7 @@ public class Block extends JPanel{
 	
 	//ve block
 	public void paint(Graphics g) {
-		a=2;
+//		a=2;
 		g.setColor(Color.red);
 		switch (a) {
 		case 1:								//hinh vuong	
@@ -395,7 +395,7 @@ public class Block extends JPanel{
 		//ve block co san
 		g.setColor(Color.red);
 		for(i=0;i<10;i++) {
-			for(j=0;j<16;j++) {Block.java
+			for(j=0;j<16;j++) { 
 				if(Data.board[i][j] == 1) {
 					g.fillRect(i*50, j*50, 50, 50);
 				}

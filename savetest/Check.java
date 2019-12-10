@@ -7,10 +7,15 @@ public class Check {
 
 	
 	//checkBlockCanResetChua
-	public boolean ResetChua (){
-		if ( !Block.f1 || !Block.f2 || !Block.f3 || !Block.f4 ) 
-			return true;
-		return false;
+	public void ResetChua (){
+		if ( !Block.f1 || !Block.f2 || !Block.f3 || !Block.f4 ) {
+			dataC.LuuHinh(Block.x1, Block.y1);
+			dataC.LuuHinh(Block.x2, Block.y2);
+			dataC.LuuHinh(Block.x3, Block.y3);
+			dataC.LuuHinh(Block.x4, Block.y4);
+			blockC.resetBlock();
+		}
+			
 	}
 	
 	//check dung tuong phai 

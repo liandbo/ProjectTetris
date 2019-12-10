@@ -58,15 +58,8 @@ public class Draw extends JPanel implements Runnable{
 			
 			blockD.tangY();
 			repaint();
-			if(checkD.ResetChua()) {
-				dataD.LuuHinh(Block.x1, Block.y1);
-				dataD.LuuHinh(Block.x2, Block.y2);
-				dataD.LuuHinh(Block.x3, Block.y3);
-				dataD.LuuHinh(Block.x4, Block.y4);
-				blockD.resetBlock();
-			}
-			
-			
+			checkD.ResetChua();
+						
 			
 		}
 	}
