@@ -59,8 +59,8 @@ public class Draw extends JPanel implements Runnable{
 			
 			blockD.tangY();
 			int xoay=blockbdD.getXoay();
-			int x=blockD.getX();
-			int y=blockD.getY();
+			int x=blockbdD.getX();
+			int y=blockbdD.getY();
 			System.out.println("x="+x+" y="+y+" xoay="+xoay);
 			repaint();
 			checkD.ResetChua();

@@ -1,12 +1,9 @@
 package test;
 
-import java.awt.Color;
-import java.awt.Graphics;
 import java.util.Random;
 
-import javax.swing.JPanel;
 
-public class Block extends JPanel{
+public class Block{
 	
 	private Cell cellB = new Cell();
 	private BlockDraw blockB = new BlockDraw();
