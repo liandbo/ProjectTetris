@@ -10,6 +10,7 @@ public class Draw extends JPanel implements Runnable{
 	private Block blockD = new Block();
 	private Check checkD = new Check();
 	private Data dataD = new Data();
+	private BlockDraw blockbdD = new BlockDraw();
 	
 	public Draw() {
 		Thread threadD = new Thread(this);
@@ -26,7 +27,7 @@ public class Draw extends JPanel implements Runnable{
 		g.fillRect(0, 0, getWidth(), getHeight());
 		
 		//ve block
-		blockD.paint(g);
+		blockbdD.paint(g);
 		
 		// ve vach
 		g.setColor(Color.white);
@@ -57,10 +58,10 @@ public class Draw extends JPanel implements Runnable{
 			}
 			
 			blockD.tangY();
-			int xoay=blockD.getXoay();
+			int xoay=blockbdD.getXoay();
 			int x=blockD.getX();
 			int y=blockD.getY();
-			System.out.println(x+" "+y+" "+xoay);
+			System.out.println("x="+x+" y="+y+" xoay="+xoay);
 			repaint();
 			checkD.ResetChua();
 						

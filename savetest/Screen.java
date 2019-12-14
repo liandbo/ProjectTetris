@@ -11,6 +11,7 @@ public class Screen extends JFrame {
 	private Block blockS = new Block();
 	private Check checkS = new Check();
 	private Data dataS = new Data();
+	private BlockDraw blockDS = new BlockDraw();
 		
 	
 	public Screen() {
@@ -44,9 +45,9 @@ public class Screen extends JFrame {
 					repaint();
 				}
 				if(keyCode == KeyEvent.VK_UP) {
-					int x = blockS.getX();
+					int x = blockDS.getX();
 					int move = checkS.automove();
-					blockS.setX(x+move);
+					blockDS.setX(x+move);
 					blockS.xoayblock();
 					repaint();
 				}
