@@ -10,7 +10,7 @@ public class BlockDraw extends JPanel {
 	private Cell cellBD = new Cell();
 	
 	private static int x=200;
-	private static int y=0;
+	private static int y=50;
 	private int i,j;
 	private static int a=1;
 	private static int xoay= 1;
@@ -75,8 +75,8 @@ public class BlockDraw extends JPanel {
 			case 1:								//hinh vuong	
 				x1=x;		y1=y;
 				x2=x+50;	y2=y;
-				x3=x;		y3=y+50;
-				x4=x+50;	y4=y+50;
+				x3=x;		y3=y-50;
+				x4=x+50;	y4=y-50;
 				f1=cellBD.cellDF(g, x1, y1);
 				f2=cellBD.cellDF(g, x2, y2);
 				f3=cellBD.cellDF(g, x3, y3);

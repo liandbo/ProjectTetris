@@ -78,7 +78,6 @@ public class Block{
 		blockB.setX(200);
 		random();
 		blockB.setXoay(1);
-//		blockB.f1=1; blockB.f2=1; blockB.f3=1; blockB.f4=1;
 	}
 
 }

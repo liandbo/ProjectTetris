@@ -46,6 +46,7 @@ public class Draw extends JPanel implements Runnable{
 	//Ve
 	public void run() {
 		int a=1000;
+		boolean r,l;
 		while (true) {
 			
 			//set delay
@@ -55,17 +56,18 @@ public class Draw extends JPanel implements Runnable{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+			repaint();
 			blockD.tangY();
+			
+			checkD.ResetChua();
+			l=checkD.checkSideLeft();
+			r=checkD.checkSideRight();
+			a++;
+						
 			int xoay=blockbdD.getXoay();
 			int x=blockbdD.getX();
 			int y=blockbdD.getY();
-			System.out.println("x="+x+" y="+y+" xoay="+xoay+" Toc do roi="+a);
-			repaint();
-			checkD.ResetChua();
-			a++;
-						
-			
+			System.out.println("x="+x+" y="+y+" xoay="+xoay+" Toc do roi="+a+"\t"+l+"\t"+r);
 		}
 	}
 

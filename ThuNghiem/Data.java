@@ -26,6 +26,7 @@ public class Data {
 	}
 		
 	public void TruHang() {
+		
 	}
 	
 	public boolean checkTetrino(int x,int y) {

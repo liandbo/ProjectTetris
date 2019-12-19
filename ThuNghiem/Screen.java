@@ -37,11 +37,11 @@ public class Screen extends JFrame {
 				}
 				if(keyCode == KeyEvent.VK_RIGHT){
 					if(checkS.checkSideRight())
-					blockS.tangX();
+						blockS.tangX();
 					repaint();
 				}
 				if(keyCode == KeyEvent.VK_DOWN) {
-					blockS.tangY();
+						blockS.tangY();
 					repaint();
 				}
 				if(keyCode == KeyEvent.VK_UP) {
