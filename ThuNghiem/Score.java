@@ -1,7 +1,11 @@
 package test;
 
 public class Score {
-	public static int Diem=0;
+	private static int Diem=0;
+	
+	public int getDiem() {
+		return Diem;
+	}
 	
 	public int tangDiem() {
 		return Diem++;

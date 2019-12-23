@@ -3,6 +3,7 @@ package test;
 public class Data {
 	
 	private Block blockDa = new Block();
+	private Score scoreDa = new Score();
 	
 	public static int[][] board = new int[10][16];//10.16
 	private int i;
@@ -25,8 +26,21 @@ public class Data {
 		Data.board[xx][yy] = 1;
 	}
 		
-	public void TruHang() {
+	public void TruHang(int yy) {
 		
+		for(int j=yy; j>=0; j--) {
+			if (j==0) {
+				for(int i=0; i<10; i++) {
+					board[i][j]=0;
+				}
+			} else {
+				for (int i=0; i<10; i++) {
+					board[i][j]= board[i][j-1];
+				}
+			}
+		}
+		
+		scoreDa.tangDiemHang();
 	}
 	
 	public boolean checkTetrino(int x,int y) {

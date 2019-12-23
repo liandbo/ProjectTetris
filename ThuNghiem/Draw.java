@@ -45,13 +45,13 @@ public class Draw extends JPanel implements Runnable{
 
 	//Ve
 	public void run() {
-		int a=1000;
+		int giatoc=1000;
 		boolean r,l;
 		while (true) {
 			
 			//set delay
 			try {
-				Thread.sleep(a);
+				Thread.sleep(giatoc);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -62,12 +62,17 @@ public class Draw extends JPanel implements Runnable{
 			checkD.ResetChua();
 			l=checkD.checkSideLeft();
 			r=checkD.checkSideRight();
-			a++;
+			
+			for(int lap=0; lap <16; lap++) {
+				checkD.checkTruHang();
+			}
+			
+			giatoc++;
 						
 			int xoay=blockbdD.getXoay();
 			int x=blockbdD.getX();
 			int y=blockbdD.getY();
-			System.out.println("x="+x+" y="+y+" xoay="+xoay+" Toc do roi="+a+"\t"+l+"\t"+r);
+			System.out.println("x="+x+" y="+y+" xoay="+xoay+" Toc do roi="+giatoc+"\t"+l+"\t"+r);
 		}
 	}
 

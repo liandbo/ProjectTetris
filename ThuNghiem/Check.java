@@ -45,4 +45,31 @@ public class Check {
 		if (BlockDraw.f1 %100/10==0 || BlockDraw.f2 %100/10==0 || BlockDraw.f3 %100/10==0 || BlockDraw.f3 %100/10==0) return false;
 		return true;
 	}
+	
+	public void checkTruHang() {
+		int j,i;
+		int sum = 0;
+		for (j=15;j>=0;j--) {
+			for(i=0;i<10;i++) {
+				sum += Data.board[i][j];
+			}
+			if (sum==10) {
+				dataC.TruHang(j);
+			}
+			sum=0;
+		}
+	}
+	public void checkxoay() {
+		
+	}
 }
+
+
+
+
+
+
+
+
+
+
