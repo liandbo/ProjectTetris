@@ -1,6 +1,7 @@
 package test;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 
 import javax.swing.JPanel;
@@ -11,6 +12,7 @@ public class Draw extends JPanel implements Runnable{
 	private Check checkD = new Check();
 	private Data dataD = new Data();
 	private BlockDraw blockbdD = new BlockDraw();
+	private Score scoreD = new Score();
 	
 	public Draw() {
 		Thread threadD = new Thread(this);
@@ -40,6 +42,10 @@ public class Draw extends JPanel implements Runnable{
 			h+=50;
 		}
 		
+		//in diem ra man hinh
+		g.setColor(Color.black);
+		g.setFont(new Font("Arial",Font.BOLD,20));
+		g.drawString("Diem:" + scoreD.getDiem(), 550, 50);
 
 	}
 
@@ -58,17 +64,12 @@ public class Draw extends JPanel implements Runnable{
 			}
 			repaint();
 			blockD.tangY();
-			
 			checkD.ResetChua();
-			l=checkD.checkSideLeft();
-			r=checkD.checkSideRight();
-			
-			for(int lap=0; lap <16; lap++) {
-				checkD.checkTruHang();
-			}
-			
+			checkD.checkTruHang();
 			giatoc++;
 						
+			l=checkD.checkSideLeft();
+			r=checkD.checkSideRight();
 			int xoay=blockbdD.getXoay();
 			int x=blockbdD.getX();
 			int y=blockbdD.getY();

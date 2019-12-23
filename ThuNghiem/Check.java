@@ -49,14 +49,16 @@ public class Check {
 	public void checkTruHang() {
 		int j,i;
 		int sum = 0;
-		for (j=15;j>=0;j--) {
-			for(i=0;i<10;i++) {
-				sum += Data.board[i][j];
+		for(int lap=0; lap <16; lap++) {
+			for (j=15;j>=0;j--) {
+				for(i=0;i<10;i++) {
+					sum += Data.board[i][j];
+				}
+				if (sum==10) {
+					dataC.TruHang(j);
+				}
+				sum=0;
 			}
-			if (sum==10) {
-				dataC.TruHang(j);
-			}
-			sum=0;
 		}
 	}
 	public void checkxoay() {

@@ -12,6 +12,7 @@ public class Screen extends JFrame {
 	private Check checkS = new Check();
 	private Data dataS = new Data();
 	private BlockDraw blockDS = new BlockDraw();
+	private Score scoreS = new Score();
 		
 	
 	public Screen() {
@@ -43,6 +44,7 @@ public class Screen extends JFrame {
 				if(keyCode == KeyEvent.VK_DOWN) {
 						blockS.tangY();
 					repaint();
+					scoreS.tangDiem();
 				}
 				if(keyCode == KeyEvent.VK_UP) {
 					int x = blockDS.getX();
