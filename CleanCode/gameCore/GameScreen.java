@@ -44,7 +44,7 @@ public class GameScreen extends JFrame {
 					repaint();
 				}
 				if(keyCode == KeyEvent.VK_UP) {
-					//gameFunction.rotateBlock();
+					gameFunction.rotateBlock();
 					repaint();
 				}
 			}

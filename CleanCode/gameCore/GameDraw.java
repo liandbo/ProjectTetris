@@ -35,6 +35,8 @@ public class GameDraw extends JPanel implements Runnable {
 		g.fillRect(gameFunction.getCurrentBlock().getX2(),gameFunction.getCurrentBlock().getY2(), 50, 50);
 		g.fillRect(gameFunction.getCurrentBlock().getX3(),gameFunction.getCurrentBlock().getY3(), 50, 50);
 		g.fillRect(gameFunction.getCurrentBlock().getX4(),gameFunction.getCurrentBlock().getY4(), 50, 50);
+		
+		//ve block co san
 		for(int i=0;i<10;i++) {
 			for(int j=0;j<16;j++) { 
 				if(GameBoard.board[i][j] == 1) {

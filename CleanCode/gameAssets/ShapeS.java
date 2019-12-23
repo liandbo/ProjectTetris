@@ -101,7 +101,6 @@ public class ShapeS implements ShapeInterface {
 		
 		switch (rotate) {
 		case 1:
-		case 2:
 		case 3:			
 			x1=x;		y1=y;
 			x2=x-50;	y2=y;
@@ -109,6 +108,7 @@ public class ShapeS implements ShapeInterface {
 			x4=x+50;	y4=y-50;
 			break;
 		case 4:
+		case 2:
 			x1=x;		y1=y;
 			x2=x;		y2=y-50;
 			x3=x+50;	y3=y;

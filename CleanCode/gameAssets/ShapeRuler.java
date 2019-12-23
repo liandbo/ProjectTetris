@@ -102,13 +102,13 @@ public class ShapeRuler implements ShapeInterface {
 		
 		switch (rotate) {
 		case 1:
-		case 2:
 		case 3:			
 			x1=x;		y1=y;
 			x2=x;		y2=y-50;
 			x3=x;		y3=y+50;
 			x4=x;		y4=y+100;
 			break;
+		case 2:
 		case 4:
 			x1=x;		y1=y;
 			x2=x-50;	y2=y;

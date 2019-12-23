@@ -43,10 +43,12 @@ public class GameFunction {
 	}
 	
 	public void resetBlock(LogicInterface logicInterface) {
+			//luu data
 			gameBoard.addTetris(getCurrentBlock().getX1(), getCurrentBlock().getY1());
 			gameBoard.addTetris(getCurrentBlock().getX2(), getCurrentBlock().getY2());
 			gameBoard.addTetris(getCurrentBlock().getX3(), getCurrentBlock().getY3());
 			gameBoard.addTetris(getCurrentBlock().getX4(), getCurrentBlock().getY4());
+			//reset block
 			getCurrentBlock().setY(50);
 			getCurrentBlock().setX(200);
 			getCurrentBlock().setRotate(1);
@@ -65,6 +67,7 @@ public class GameFunction {
 		}
 	}
 	
+	//qua phai
 	public void increaseBlockX(LogicInterface logicInterface) {
 		if(logicInterface.checkRight(getCurrentBlock().getX(), getCurrentBlock().getY())&&
 				logicInterface.checkRight(getCurrentBlock().getX1(), getCurrentBlock().getY1())&&
@@ -80,6 +83,7 @@ public class GameFunction {
 		}
 	}
 	
+	//qua trai
 	public void decreaseBlockX(LogicInterface logicInterface) {
 		if(logicInterface.checkLeft(getCurrentBlock().getX(), getCurrentBlock().getY())&&
 				logicInterface.checkLeft(getCurrentBlock().getX1(), getCurrentBlock().getY1())&&
@@ -95,6 +99,7 @@ public class GameFunction {
 		}
 	}
 	
+	//giam do cao
 	public void increaseBlockY(LogicInterface logicInterface) {
 		if(logicInterface.checkDown(getCurrentBlock().getX(), getCurrentBlock().getY())&&
 				logicInterface.checkDown(getCurrentBlock().getX1(), getCurrentBlock().getY1())&&
