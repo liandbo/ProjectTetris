@@ -101,9 +101,9 @@ public class ShapeSquare implements ShapeInterface {
 	
 	public void setBlock() {
 		x1=x;								y1=y;
-		x2=x+GameVariables.getBlockXSize();	y2=y;
-		x3=x;								y3=y+GameVariables.getBlockYSize();
-		x4=x+GameVariables.getBlockXSize();	y4=y+GameVariables.getBlockYSize();
+		x2=x+GameVariables.getBlockSize();	y2=y;
+		x3=x;								y3=y+GameVariables.getBlockSize();
+		x4=x+GameVariables.getBlockSize();	y4=y+GameVariables.getBlockSize();
 	}
 	
 	

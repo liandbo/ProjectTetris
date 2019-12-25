@@ -14,14 +14,13 @@ public class GameVariables {
 	private static int blockRotationFinal = 4;
 	private static int blockXAmount = 10;
 	private static int blockYAmount = 16;
-	private static int blockXSize = 50;
-	private static int blockYSize = 50;
-	private static int blockXInital = blockXSize*(blockXAmount/2)-blockXSize;
+	private static int blockSize = 50;
+	private static int blockXInital = blockSize*(blockXAmount/2)-blockSize;
 	private static int blockYInital = 0;
 	private static int boardXOffset = 0;
 	private static int boardYOffset = 0;
-	private static int boardXSize = boardXOffset+(blockXAmount * blockXSize);
-	private static int boardYSize = boardYOffset+(blockYAmount * blockYSize)-50;//50 pixels is the size of yours tooltip
+	private static int boardXSize = boardXOffset+(blockXAmount * blockSize);
+	private static int boardYSize = boardYOffset+(blockYAmount * blockSize)-50;//50 pixels is the size of yours tooltip
 	private static int scoreBoardXSize = boardXSize+300;
 	private static int scoreBoardYSize = boardYSize+50;
 	private static int screenXSize = scoreBoardXSize;
@@ -62,11 +61,8 @@ public class GameVariables {
 	public static int getBlockYAmount() {
 		return blockYAmount;
 	}
-	public static int getBlockXSize() {
-		return blockXSize;
-	}
-	public static int getBlockYSize() {
-		return blockYSize;
+	public static int getBlockSize() {
+		return blockSize;
 	}
 	public static int getBoardXOffset() {
 		return boardXOffset;

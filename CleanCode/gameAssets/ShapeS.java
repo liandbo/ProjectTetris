@@ -105,16 +105,16 @@ public class ShapeS implements ShapeInterface {
 		case 1:
 		case 3:			
 			x1=x;								y1=y;
-			x2=x-GameVariables.getBlockXSize();	y2=y;
-			x3=x;								y3=y-GameVariables.getBlockYSize();
-			x4=x+GameVariables.getBlockXSize();	y4=y-GameVariables.getBlockYSize();
+			x2=x-GameVariables.getBlockSize();	y2=y;
+			x3=x;								y3=y-GameVariables.getBlockSize();
+			x4=x+GameVariables.getBlockSize();	y4=y-GameVariables.getBlockSize();
 			break;
 		case 4:
 		case 2:
 			x1=x;								y1=y;
-			x2=x;								y2=y-GameVariables.getBlockYSize();
-			x3=x+GameVariables.getBlockXSize();	y3=y;
-			x4=x+GameVariables.getBlockXSize();	y4=y+GameVariables.getBlockYSize();
+			x2=x;								y2=y-GameVariables.getBlockSize();
+			x3=x+GameVariables.getBlockSize();	y3=y;
+			x4=x+GameVariables.getBlockSize();	y4=y+GameVariables.getBlockSize();
 			break;
 		}
 		

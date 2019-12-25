@@ -1,6 +1,7 @@
 package gameCore;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 
 import javax.swing.JPanel;
@@ -12,6 +13,7 @@ public class GameDraw extends JPanel implements Runnable {
 	GameFunction gameFunction = new GameFunction();
 	GameLogic gameLogic = new GameLogic();
 	GameBoard gameBoard = new GameBoard();
+	Score score = new Score();
 	
 	public GameDraw() {
 		Thread thread1 = new Thread(this);
@@ -30,16 +32,16 @@ public class GameDraw extends JPanel implements Runnable {
 		
 		g.setColor(GameVariables.getBlockColor());
 		gameFunction.getCurrentBlock().setBlock();
-		g.fillRect(gameFunction.getCurrentBlock().getX1(),gameFunction.getCurrentBlock().getY1(), GameVariables.getBlockXSize(), GameVariables.getBlockYSize());
-		g.fillRect(gameFunction.getCurrentBlock().getX2(),gameFunction.getCurrentBlock().getY2(), GameVariables.getBlockXSize(), GameVariables.getBlockYSize());
-		g.fillRect(gameFunction.getCurrentBlock().getX3(),gameFunction.getCurrentBlock().getY3(), GameVariables.getBlockXSize(), GameVariables.getBlockYSize());
-		g.fillRect(gameFunction.getCurrentBlock().getX4(),gameFunction.getCurrentBlock().getY4(), GameVariables.getBlockXSize(), GameVariables.getBlockYSize());
+		g.fillRect(gameFunction.getCurrentBlock().getX1(),gameFunction.getCurrentBlock().getY1(), GameVariables.getBlockSize(), GameVariables.getBlockSize());
+		g.fillRect(gameFunction.getCurrentBlock().getX2(),gameFunction.getCurrentBlock().getY2(), GameVariables.getBlockSize(), GameVariables.getBlockSize());
+		g.fillRect(gameFunction.getCurrentBlock().getX3(),gameFunction.getCurrentBlock().getY3(), GameVariables.getBlockSize(), GameVariables.getBlockSize());
+		g.fillRect(gameFunction.getCurrentBlock().getX4(),gameFunction.getCurrentBlock().getY4(), GameVariables.getBlockSize(), GameVariables.getBlockSize());
 		
 		//ve block co san
 		for(int i=0;i<GameVariables.getBlockXAmount();i++) {
 			for(int j=0;j<GameVariables.getBlockYAmount();j++) { 
 				if(GameBoard.board[i][j] == 1) {
-					g.fillRect((i*GameVariables.getBlockXSize())+GameVariables.getBoardXOffset(), (j*GameVariables.getBlockYSize())+GameVariables.getBoardYOffset(), GameVariables.getBlockXSize(), GameVariables.getBlockYSize());
+					g.fillRect((i*GameVariables.getBlockSize())+GameVariables.getBoardXOffset(), (j*GameVariables.getBlockSize())+GameVariables.getBoardYOffset(), GameVariables.getBlockSize(), GameVariables.getBlockSize());
 				}
 			}
 		}
@@ -49,12 +51,17 @@ public class GameDraw extends JPanel implements Runnable {
 		g.setColor(GameVariables.getLineColor());
 		for(int i=0;i<GameVariables.getBlockXAmount()+1;i++) {									// doc
 			g.drawLine(x, GameVariables.getBoardYOffset(), x, GameVariables.getBoardYSize());
-			x+=GameVariables.getBlockXSize();
+			x+=GameVariables.getBlockSize();
 		}
 		for(int i=0;i<GameVariables.getBlockYAmount();i++) {									// ngang
 			g.drawLine(GameVariables.getBoardXOffset(), h, GameVariables.getBoardXSize(), h);
-			h+=GameVariables.getBlockYSize();
+			h+=GameVariables.getBlockSize();
 		}
+		
+		//in diem
+		g.setColor(Color.black);
+		g.setFont(new Font("Arial",Font.BOLD,20));
+		g.drawString("Diem:" + score.getScore(), 550, 50);
 	}
 	
 	public void run() {
@@ -69,14 +76,14 @@ public class GameDraw extends JPanel implements Runnable {
 				e.printStackTrace();
 			}
 			
-			gameFunction.increaseBlockY(gameLogic);
+			
 			
 			if(!gameFunction.checkBlock(gameLogic)){
 				gameFunction.resetBlock(gameLogic);
 			}
-			gameFunction.checkBoardLine(gameLogic);
+			gameFunction.increaseBlockY(gameLogic);
 			repaint();
-			
+			gameFunction.checkBoardLine(gameLogic);
 			
 			
 			

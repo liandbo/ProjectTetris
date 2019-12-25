@@ -13,6 +13,7 @@ public class GameScreen extends JFrame {
 	GameLogic gameLogic = new GameLogic();
 	GameBoard gameBoard = new GameBoard();
 	GameDraw gameDraw = new GameDraw();
+	Score score = new Score();
 	
 	public GameScreen(){
 		gameBoard.setBoard();
@@ -40,11 +41,12 @@ public class GameScreen extends JFrame {
 					repaint();
 				}
 				if(keyCode == KeyEvent.VK_DOWN) {
+					gameFunction.checkBoardLine(gameLogic);
 					gameFunction.increaseBlockY(gameLogic);
+					score.ScoreforDown();
 					if(!gameFunction.checkBlock(gameLogic)){
 						gameFunction.resetBlock(gameLogic);
 					}
-					gameFunction.checkBoardLine(gameLogic);
 					repaint();
 				}
 				if(keyCode == KeyEvent.VK_UP) {

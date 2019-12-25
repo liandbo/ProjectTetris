@@ -27,7 +27,7 @@ public class GameFunction {
 	
 	public ShapeInterface randomBlock() {
 		ShapeInterface randomBlock = listBlock[(int) (Math.random() * listBlock.length)];
-		return shapeSquare;
+		return randomBlock;
 	}
 	
 	public boolean checkBlock(LogicInterface logicInterface) {
@@ -84,11 +84,11 @@ public class GameFunction {
 				logicInterface.checkRight(getCurrentBlock().getX3(), getCurrentBlock().getY3())&&
 				logicInterface.checkRight(getCurrentBlock().getX4(), getCurrentBlock().getY4())
 				) {
-			getCurrentBlock().setX(getCurrentBlock().getX()+GameVariables.getBlockXSize());
-			getCurrentBlock().setX1(getCurrentBlock().getX1()+GameVariables.getBlockXSize());
-			getCurrentBlock().setX2(getCurrentBlock().getX2()+GameVariables.getBlockXSize());
-			getCurrentBlock().setX3(getCurrentBlock().getX3()+GameVariables.getBlockXSize());
-			getCurrentBlock().setX4(getCurrentBlock().getX4()+GameVariables.getBlockXSize());
+			getCurrentBlock().setX(getCurrentBlock().getX()+GameVariables.getBlockSize());
+			getCurrentBlock().setX1(getCurrentBlock().getX1()+GameVariables.getBlockSize());
+			getCurrentBlock().setX2(getCurrentBlock().getX2()+GameVariables.getBlockSize());
+			getCurrentBlock().setX3(getCurrentBlock().getX3()+GameVariables.getBlockSize());
+			getCurrentBlock().setX4(getCurrentBlock().getX4()+GameVariables.getBlockSize());
 		}
 	}
 	
@@ -100,11 +100,11 @@ public class GameFunction {
 				logicInterface.checkLeft(getCurrentBlock().getX3(), getCurrentBlock().getY3())&&
 				logicInterface.checkLeft(getCurrentBlock().getX4(), getCurrentBlock().getY4())
 				) {
-			getCurrentBlock().setX(getCurrentBlock().getX()-GameVariables.getBlockXSize());
-			getCurrentBlock().setX1(getCurrentBlock().getX1()-GameVariables.getBlockXSize());
-			getCurrentBlock().setX2(getCurrentBlock().getX2()-GameVariables.getBlockXSize());
-			getCurrentBlock().setX3(getCurrentBlock().getX3()-GameVariables.getBlockXSize());
-			getCurrentBlock().setX4(getCurrentBlock().getX4()-GameVariables.getBlockXSize());
+			getCurrentBlock().setX(getCurrentBlock().getX()-GameVariables.getBlockSize());
+			getCurrentBlock().setX1(getCurrentBlock().getX1()-GameVariables.getBlockSize());
+			getCurrentBlock().setX2(getCurrentBlock().getX2()-GameVariables.getBlockSize());
+			getCurrentBlock().setX3(getCurrentBlock().getX3()-GameVariables.getBlockSize());
+			getCurrentBlock().setX4(getCurrentBlock().getX4()-GameVariables.getBlockSize());
 		}
 	}
 	
@@ -116,11 +116,11 @@ public class GameFunction {
 				logicInterface.checkDown(getCurrentBlock().getX3(), getCurrentBlock().getY3())&&
 				logicInterface.checkDown(getCurrentBlock().getX4(), getCurrentBlock().getY4())
 				) {
-			getCurrentBlock().setY(getCurrentBlock().getY()+GameVariables.getBlockYSize());
-			getCurrentBlock().setY1(getCurrentBlock().getY1()+GameVariables.getBlockYSize());
-			getCurrentBlock().setY2(getCurrentBlock().getY2()+GameVariables.getBlockYSize());
-			getCurrentBlock().setY3(getCurrentBlock().getY3()+GameVariables.getBlockYSize());
-			getCurrentBlock().setY4(getCurrentBlock().getY4()+GameVariables.getBlockYSize());
+			getCurrentBlock().setY(getCurrentBlock().getY()+GameVariables.getBlockSize());
+			getCurrentBlock().setY1(getCurrentBlock().getY1()+GameVariables.getBlockSize());
+			getCurrentBlock().setY2(getCurrentBlock().getY2()+GameVariables.getBlockSize());
+			getCurrentBlock().setY3(getCurrentBlock().getY3()+GameVariables.getBlockSize());
+			getCurrentBlock().setY4(getCurrentBlock().getY4()+GameVariables.getBlockSize());
 			
 			System.out.println(getCurrentBlock().getX() +" "+ getCurrentBlock().getY()+" "+getCurrentBlock());//debuging tool r cool
 		}

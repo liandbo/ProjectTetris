@@ -5,21 +5,22 @@ import gameData.*;
 import gameInterface.*;
 
 public class GameLogic implements LogicInterface {
+	Score score = new Score();
 	
 	public boolean checkDown(int x,int y) {
-		return(y/GameVariables.getBlockYSize() > (GameVariables.getBlockYAmount()-3) || GameBoard.board[x/GameVariables.getBlockXSize()][(y/GameVariables.getBlockYSize()) +1]==1)?false:true;
+		return(y/GameVariables.getBlockSize() > (GameVariables.getBlockYAmount()-3) || GameBoard.board[x/GameVariables.getBlockSize()][(y/GameVariables.getBlockSize()) +1]==1)?false:true;
 	}
 	
 	public boolean checkRight(int x,int y) {
-		return(x/GameVariables.getBlockXSize() > (GameVariables.getBlockXAmount()-2) || GameBoard.board[(x/GameVariables.getBlockXSize()) +1][y/GameVariables.getBlockYSize()]==1)?false:true;
+		return(x/GameVariables.getBlockSize() > (GameVariables.getBlockXAmount()-2) || GameBoard.board[(x/GameVariables.getBlockSize()) +1][y/GameVariables.getBlockSize()]==1)?false:true;
 	}
 	
 	public boolean checkLeft(int x,int y) {
-		return(x/GameVariables.getBlockXSize() < 1 || GameBoard.board[(x/GameVariables.getBlockXSize()) -1][y/GameVariables.getBlockYSize()]==1)?false:true;
+		return(x/GameVariables.getBlockSize() < 1 || GameBoard.board[(x/GameVariables.getBlockSize()) -1][y/GameVariables.getBlockSize()]==1)?false:true;
 	}
 	
 	public boolean checkPosition(int x, int y) {
-		return(x/GameVariables.getBlockXSize() < 0 || x/GameVariables.getBlockXSize() > (GameVariables.getBlockXAmount()-1) || GameBoard.board[x/GameVariables.getBlockXSize()][y/GameVariables.getBlockYSize()]==1)?false:true;
+		return(x/GameVariables.getBlockSize() < 0 || x/GameVariables.getBlockSize() > (GameVariables.getBlockXAmount()-1) || GameBoard.board[x/GameVariables.getBlockSize()][y/GameVariables.getBlockSize()]==1)?false:true;
 	}
 
 	public int checkLine() {
@@ -30,6 +31,7 @@ public class GameLogic implements LogicInterface {
 					sum += GameBoard.board[i][j];
 				}
 				if (sum==GameVariables.getBlockXAmount()) {
+					score.ScoreforLine();
 					return j;
 				}
 				sum=0;
