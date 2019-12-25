@@ -27,7 +27,7 @@ public class GameFunction {
 	
 	public ShapeInterface randomBlock() {
 		ShapeInterface randomBlock = listBlock[(int) (Math.random() * listBlock.length)];
-		return randomBlock;
+		return shapeSquare;
 	}
 	
 	public boolean checkBlock(LogicInterface logicInterface) {
@@ -49,18 +49,18 @@ public class GameFunction {
 			gameBoard.addTetris(getCurrentBlock().getX3(), getCurrentBlock().getY3());
 			gameBoard.addTetris(getCurrentBlock().getX4(), getCurrentBlock().getY4());
 			//reset block
-			getCurrentBlock().setY(50);
-			getCurrentBlock().setX(200);
-			getCurrentBlock().setRotate(1);
+			getCurrentBlock().setY(GameVariables.getBlockYInital());
+			getCurrentBlock().setX(GameVariables.getBlockXInital());
+			getCurrentBlock().setRotate(GameVariables.getBlockRotationInital());
 			currentBlock=randomBlock();
-			getCurrentBlock().setY(50);
-			getCurrentBlock().setX(200);
-			getCurrentBlock().setRotate(1);
+			getCurrentBlock().setY(GameVariables.getBlockYInital());
+			getCurrentBlock().setX(GameVariables.getBlockXInital());
+			getCurrentBlock().setRotate(GameVariables.getBlockRotationInital());
 	}
 	
 	public void rotateBlock() {
-		if (getCurrentBlock().getRotate() == 4) {
-			getCurrentBlock().setRotate(1);
+		if (getCurrentBlock().getRotate() == GameVariables.getBlockRotationFinal()) {
+			getCurrentBlock().setRotate(GameVariables.getBlockRotationInital());
 		} 
 		else {
 			getCurrentBlock().setRotate(getCurrentBlock().getRotate()+1);
@@ -68,8 +68,8 @@ public class GameFunction {
 	}
 	
 	public void reverseBlock() {
-		if (getCurrentBlock().getRotate() == 1) {
-			getCurrentBlock().setRotate(4);
+		if (getCurrentBlock().getRotate() == GameVariables.getBlockRotationInital()) {
+			getCurrentBlock().setRotate(GameVariables.getBlockRotationFinal());
 		} 
 		else {
 			getCurrentBlock().setRotate(getCurrentBlock().getRotate()-1);
@@ -84,11 +84,11 @@ public class GameFunction {
 				logicInterface.checkRight(getCurrentBlock().getX3(), getCurrentBlock().getY3())&&
 				logicInterface.checkRight(getCurrentBlock().getX4(), getCurrentBlock().getY4())
 				) {
-			getCurrentBlock().setX(getCurrentBlock().getX()+50);
-			getCurrentBlock().setX1(getCurrentBlock().getX1()+50);
-			getCurrentBlock().setX2(getCurrentBlock().getX2()+50);
-			getCurrentBlock().setX3(getCurrentBlock().getX3()+50);
-			getCurrentBlock().setX4(getCurrentBlock().getX4()+50);
+			getCurrentBlock().setX(getCurrentBlock().getX()+GameVariables.getBlockXSize());
+			getCurrentBlock().setX1(getCurrentBlock().getX1()+GameVariables.getBlockXSize());
+			getCurrentBlock().setX2(getCurrentBlock().getX2()+GameVariables.getBlockXSize());
+			getCurrentBlock().setX3(getCurrentBlock().getX3()+GameVariables.getBlockXSize());
+			getCurrentBlock().setX4(getCurrentBlock().getX4()+GameVariables.getBlockXSize());
 		}
 	}
 	
@@ -100,11 +100,11 @@ public class GameFunction {
 				logicInterface.checkLeft(getCurrentBlock().getX3(), getCurrentBlock().getY3())&&
 				logicInterface.checkLeft(getCurrentBlock().getX4(), getCurrentBlock().getY4())
 				) {
-			getCurrentBlock().setX(getCurrentBlock().getX()-50);
-			getCurrentBlock().setX1(getCurrentBlock().getX1()-50);
-			getCurrentBlock().setX2(getCurrentBlock().getX2()-50);
-			getCurrentBlock().setX3(getCurrentBlock().getX3()-50);
-			getCurrentBlock().setX4(getCurrentBlock().getX4()-50);
+			getCurrentBlock().setX(getCurrentBlock().getX()-GameVariables.getBlockXSize());
+			getCurrentBlock().setX1(getCurrentBlock().getX1()-GameVariables.getBlockXSize());
+			getCurrentBlock().setX2(getCurrentBlock().getX2()-GameVariables.getBlockXSize());
+			getCurrentBlock().setX3(getCurrentBlock().getX3()-GameVariables.getBlockXSize());
+			getCurrentBlock().setX4(getCurrentBlock().getX4()-GameVariables.getBlockXSize());
 		}
 	}
 	
@@ -116,18 +116,18 @@ public class GameFunction {
 				logicInterface.checkDown(getCurrentBlock().getX3(), getCurrentBlock().getY3())&&
 				logicInterface.checkDown(getCurrentBlock().getX4(), getCurrentBlock().getY4())
 				) {
-			getCurrentBlock().setY(getCurrentBlock().getY()+50);
-			getCurrentBlock().setY1(getCurrentBlock().getY1()+50);
-			getCurrentBlock().setY2(getCurrentBlock().getY2()+50);
-			getCurrentBlock().setY3(getCurrentBlock().getY3()+50);
-			getCurrentBlock().setY4(getCurrentBlock().getY4()+50);
+			getCurrentBlock().setY(getCurrentBlock().getY()+GameVariables.getBlockYSize());
+			getCurrentBlock().setY1(getCurrentBlock().getY1()+GameVariables.getBlockYSize());
+			getCurrentBlock().setY2(getCurrentBlock().getY2()+GameVariables.getBlockYSize());
+			getCurrentBlock().setY3(getCurrentBlock().getY3()+GameVariables.getBlockYSize());
+			getCurrentBlock().setY4(getCurrentBlock().getY4()+GameVariables.getBlockYSize());
 			
-			System.out.println(getCurrentBlock().getX() +" "+ getCurrentBlock().getY()+" "+getCurrentBlock());
+			System.out.println(getCurrentBlock().getX() +" "+ getCurrentBlock().getY()+" "+getCurrentBlock());//debuging tool r cool
 		}
 	}
 	
 	//check xoay
-	public void Rotate(LogicInterface logicInterface) {
+	public void rotateBlock(LogicInterface logicInterface) {
 		rotateBlock();
 		getCurrentBlock().setBlock();
 		if (	!logicInterface.checkPosition(getCurrentBlock().getX1(), getCurrentBlock().getY1()) ||
@@ -138,6 +138,12 @@ public class GameFunction {
 			reverseBlock();
 			getCurrentBlock().setBlock();
 		} 
+	}
+	
+	public void checkBoardLine(LogicInterface logicInterface) {
+		for(int i = 0; i < GameVariables.getBlockXAmount(); i++) {
+			gameBoard.removeLine(logicInterface.checkLine());
+		}
 	}
 	
 }

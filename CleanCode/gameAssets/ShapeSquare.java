@@ -1,12 +1,13 @@
 package gameAssets;
 
+import gameData.GameVariables;
 import gameInterface.*;
 
 public class ShapeSquare implements ShapeInterface {
 	
-	private static int x=200;
-	private static int y=50;
-	private static int rotate= 1;
+	private static int x=GameVariables.getBlockXInital();
+	private static int y=GameVariables.getBlockYInital();
+	private static int rotate = GameVariables.getBlockRotationInital();
 	private static int x1,x2,x3,x4;
 	private static int y1,y2,y3,y4;
 	
@@ -99,10 +100,10 @@ public class ShapeSquare implements ShapeInterface {
 	}
 	
 	public void setBlock() {
-		x1=x;		y1=y;
-		x2=x+50;	y2=y;
-		x3=x;		y3=y-50;
-		x4=x+50;	y4=y-50;
+		x1=x;								y1=y;
+		x2=x+GameVariables.getBlockXSize();	y2=y;
+		x3=x;								y3=y+GameVariables.getBlockYSize();
+		x4=x+GameVariables.getBlockXSize();	y4=y+GameVariables.getBlockYSize();
 	}
 	
 	

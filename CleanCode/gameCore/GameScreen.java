@@ -18,9 +18,9 @@ public class GameScreen extends JFrame {
 		gameBoard.setBoard();
 		
 		setTitle("Game xep hinh VN chat luong cao.");
-		setSize(800, 800);
+		setSize(GameVariables.getScreenXSize(),GameVariables.getScreenYSize());
 		setVisible(true);
-		setLocation(600, 100);
+		setLocation(0,0);
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		add(gameDraw);
@@ -41,14 +41,14 @@ public class GameScreen extends JFrame {
 				}
 				if(keyCode == KeyEvent.VK_DOWN) {
 					gameFunction.increaseBlockY(gameLogic);
-					repaint();
-					
 					if(!gameFunction.checkBlock(gameLogic)){
 						gameFunction.resetBlock(gameLogic);
 					}
+					gameFunction.checkBoardLine(gameLogic);
+					repaint();
 				}
 				if(keyCode == KeyEvent.VK_UP) {
-						gameFunction.Rotate(gameLogic);
+						gameFunction.rotateBlock(gameLogic);
 						repaint();
 					
 				}

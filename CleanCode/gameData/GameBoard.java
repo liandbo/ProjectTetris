@@ -2,10 +2,10 @@ package gameData;
 
 public class GameBoard {
 	
-	private static int x = 10;
-	private static int y = 16;
+	private static int x = GameVariables.getBlockYAmount();
+	private static int y = GameVariables.getBlockYAmount();
 	
-	public static int[][] board = new int[x][y];//10.16
+	public static int[][] board = new int[x][y];//10.16 should be the default value
 	
 	public void setBoard() {
 		for(int i=0;i<x;i++) {
@@ -16,11 +16,19 @@ public class GameBoard {
 	}
 	
 	public void addTetris(int x,int y) {
-		board[x/50][y/50] = 1;
+		board[x/GameVariables.getBlockXSize()][y/GameVariables.getBlockYSize()] = 1;
 	}
-
+	
 	public void removeTetris(int x,int y) {
-		board[x/50][y/50] = 0;
+		board[x/GameVariables.getBlockXSize()][y/GameVariables.getBlockYSize()] = 0;
+	}
+	
+	public void removeLine(int y) {
+		if(y != -1) {
+			for(int i = 0; i < x; i++) {
+				removeTetris(i*GameVariables.getBlockXSize(),y*GameVariables.getBlockYSize());
+			}
+		}
 	}
 
 }
