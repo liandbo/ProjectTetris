@@ -24,6 +24,10 @@ public class GameLogic implements LogicInterface {
 	public boolean checkLeft(int x,int y) {
 		return(x/50 < 1 || GameBoard.board[(x/50) -1][y/50]==1)?false:true;
 	}
+	
+	public boolean checkPosition(int x, int y) {
+		return(x>450 || x<0 || GameBoard.board[x/50][y/50]==1)?false:true;
+	}
 
 
 }

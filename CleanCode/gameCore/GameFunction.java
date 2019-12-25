@@ -67,6 +67,15 @@ public class GameFunction {
 		}
 	}
 	
+	public void reverseBlock() {
+		if (getCurrentBlock().getRotate() == 1) {
+			getCurrentBlock().setRotate(4);
+		} 
+		else {
+			getCurrentBlock().setRotate(getCurrentBlock().getRotate()-1);
+		}
+	}
+	
 	//qua phai
 	public void increaseBlockX(LogicInterface logicInterface) {
 		if(logicInterface.checkRight(getCurrentBlock().getX(), getCurrentBlock().getY())&&
@@ -115,6 +124,20 @@ public class GameFunction {
 			
 			System.out.println(getCurrentBlock().getX() +" "+ getCurrentBlock().getY()+" "+getCurrentBlock());
 		}
+	}
+	
+	//check xoay
+	public void Rotate(LogicInterface logicInterface) {
+		rotateBlock();
+		getCurrentBlock().setBlock();
+		if (	!logicInterface.checkPosition(getCurrentBlock().getX1(), getCurrentBlock().getY1()) ||
+				!logicInterface.checkPosition(getCurrentBlock().getX2(), getCurrentBlock().getY2()) ||
+				!logicInterface.checkPosition(getCurrentBlock().getX3(), getCurrentBlock().getY3()) ||
+				!logicInterface.checkPosition(getCurrentBlock().getX4(), getCurrentBlock().getY4()) ) 
+		{
+			reverseBlock();
+			getCurrentBlock().setBlock();
+		} 
 	}
 	
 }

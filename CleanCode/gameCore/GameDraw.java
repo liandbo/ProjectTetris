@@ -23,7 +23,6 @@ public class GameDraw extends JPanel implements Runnable {
 		int h=0;
 		
 		//ve nen`
-		
 		g.setColor(Color.cyan);
 		g.fillRect(0, 0, getWidth(), getHeight());
 		

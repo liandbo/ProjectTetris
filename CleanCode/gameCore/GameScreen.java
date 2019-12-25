@@ -42,10 +42,15 @@ public class GameScreen extends JFrame {
 				if(keyCode == KeyEvent.VK_DOWN) {
 					gameFunction.increaseBlockY(gameLogic);
 					repaint();
+					
+					if(!gameFunction.checkBlock(gameLogic)){
+						gameFunction.resetBlock(gameLogic);
+					}
 				}
 				if(keyCode == KeyEvent.VK_UP) {
-					gameFunction.rotateBlock();
-					repaint();
+						gameFunction.Rotate(gameLogic);
+						repaint();
+					
 				}
 			}
 			
