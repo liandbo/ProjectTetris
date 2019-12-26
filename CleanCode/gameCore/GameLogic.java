@@ -5,7 +5,7 @@ import gameData.*;
 import gameInterface.*;
 
 public class GameLogic implements LogicInterface {
-	Score score = new Score();
+	GameScore gameScore = new GameScore();
 	
 	public boolean checkDown(int x,int y) {
 		return(y/GameVariables.getBlockSize() > (GameVariables.getBlockYAmount()-3) || GameBoard.board[x/GameVariables.getBlockSize()][(y/GameVariables.getBlockSize()) +1]==1)?false:true;
@@ -31,7 +31,7 @@ public class GameLogic implements LogicInterface {
 					sum += GameBoard.board[i][j];
 				}
 				if (sum==GameVariables.getBlockXAmount()) {
-					score.ScoreforLine();
+					gameScore.ScoreforLine();
 					return j;
 				}
 				sum=0;

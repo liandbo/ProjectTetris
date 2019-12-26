@@ -31,7 +31,7 @@ public class GameBoard {
 						board[i][j]=0;
 					}
 				} else {
-					for (int i=0; i<10; i++) {
+					for (int i=0; i<x; i++) {
 						board[i][j]= board[i][j-1];
 					}
 				}

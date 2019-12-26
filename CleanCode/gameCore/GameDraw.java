@@ -13,7 +13,7 @@ public class GameDraw extends JPanel implements Runnable {
 	GameFunction gameFunction = new GameFunction();
 	GameLogic gameLogic = new GameLogic();
 	GameBoard gameBoard = new GameBoard();
-	Score score = new Score();
+	GameScore gameScore = new GameScore();
 	
 	public GameDraw() {
 		Thread thread1 = new Thread(this);
@@ -59,9 +59,9 @@ public class GameDraw extends JPanel implements Runnable {
 		}
 		
 		//in diem
-		g.setColor(Color.black);
+		g.setColor(GameVariables.getScoreColor());
 		g.setFont(new Font("Arial",Font.BOLD,20));
-		g.drawString("Diem:" + score.getScore(), 550, 50);
+		g.drawString("Diem:" + gameScore.getScore(), GameVariables.getScoreXPos(), GameVariables.getScoreYPos());
 	}
 	
 	public void run() {
@@ -82,8 +82,9 @@ public class GameDraw extends JPanel implements Runnable {
 				gameFunction.resetBlock(gameLogic);
 			}
 			gameFunction.increaseBlockY(gameLogic);
-			repaint();
 			gameFunction.checkBoardLine(gameLogic);
+			repaint();
+			
 			
 			
 			
