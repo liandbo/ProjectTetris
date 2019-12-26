@@ -29,7 +29,6 @@ public class GameDraw extends JPanel implements Runnable {
 		g.fillRect(0, 0, getWidth(), getHeight());
 		
 		//ve block
-		
 		g.setColor(GameVariables.getBlockColor());
 		gameFunction.getCurrentBlock().setBlock();
 		g.fillRect(gameFunction.getCurrentBlock().getX1(),gameFunction.getCurrentBlock().getY1(), GameVariables.getBlockSize(), GameVariables.getBlockSize());
@@ -37,7 +36,20 @@ public class GameDraw extends JPanel implements Runnable {
 		g.fillRect(gameFunction.getCurrentBlock().getX3(),gameFunction.getCurrentBlock().getY3(), GameVariables.getBlockSize(), GameVariables.getBlockSize());
 		g.fillRect(gameFunction.getCurrentBlock().getX4(),gameFunction.getCurrentBlock().getY4(), GameVariables.getBlockSize(), GameVariables.getBlockSize());
 		
+		//ve block du doan
+		g.fillRect(gameFunction.getNextBlock().getXX1(),gameFunction.getNextBlock().getYY1(), GameVariables.getBlockSize(), GameVariables.getBlockSize());
+		g.fillRect(gameFunction.getNextBlock().getXX2(),gameFunction.getNextBlock().getYY2(), GameVariables.getBlockSize(), GameVariables.getBlockSize());
+		g.fillRect(gameFunction.getNextBlock().getXX3(),gameFunction.getNextBlock().getYY3(), GameVariables.getBlockSize(), GameVariables.getBlockSize());
+		g.fillRect(gameFunction.getNextBlock().getXX4(),gameFunction.getNextBlock().getYY4(), GameVariables.getBlockSize(), GameVariables.getBlockSize());
+		//ve vien block du doan
+		g.setColor(GameVariables.getLineColor());
+		g.drawRect(gameFunction.getNextBlock().getXX1(),gameFunction.getNextBlock().getYY1(), GameVariables.getBlockSize(), GameVariables.getBlockSize());
+		g.drawRect(gameFunction.getNextBlock().getXX2(),gameFunction.getNextBlock().getYY2(), GameVariables.getBlockSize(), GameVariables.getBlockSize());
+		g.drawRect(gameFunction.getNextBlock().getXX3(),gameFunction.getNextBlock().getYY3(), GameVariables.getBlockSize(), GameVariables.getBlockSize());
+		g.drawRect(gameFunction.getNextBlock().getXX4(),gameFunction.getNextBlock().getYY4(), GameVariables.getBlockSize(), GameVariables.getBlockSize());
+		
 		//ve block co san
+		g.setColor(GameVariables.getBlockColor());
 		for(int i=0;i<GameVariables.getBlockXAmount();i++) {
 			for(int j=0;j<GameVariables.getBlockYAmount();j++) { 
 				if(GameBoard.board[i][j] == 1) {

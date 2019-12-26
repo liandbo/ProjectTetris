@@ -1,5 +1,7 @@
 package gameCore;
 
+import java.util.Random;
+
 import gameAssets.*;
 import gameData.*;
 import gameInterface.*;
@@ -19,14 +21,33 @@ public class GameFunction {
 	
 	
 	private static ShapeInterface currentBlock=shapeSquare;
+	private static ShapeInterface nextBlock=shapeRuler;
 	private ShapeInterface listBlock[]= {shapeRuler,shapeSquare,shapeJ,shapeL,shapeS,shapeZ,shapeT};
 	
 	public ShapeInterface getCurrentBlock() {
 		return currentBlock;
 	}
+	public ShapeInterface getNextBlock() {
+		return nextBlock;
+	}
 	
+	private static int a1=0;
+	private static int a2;
+	private static int temp=0;
 	public ShapeInterface randomBlock() {
-		ShapeInterface randomBlock = listBlock[(int) (Math.random() * listBlock.length)];
+		boolean trung=true;
+		Random rd = new Random();
+		a2=a1;
+		a1=temp;
+		System.out.println(a1+" "+a2);
+		temp=rd.nextInt(7)+1;
+		while (trung == true) {
+			if (temp!=a1 && temp!=a2) {
+				trung = false;
+			} else
+				temp=rd.nextInt(7)+1;
+		}
+		ShapeInterface randomBlock = listBlock[temp];
 		return randomBlock;
 	}
 	
@@ -52,7 +73,8 @@ public class GameFunction {
 			getCurrentBlock().setY(GameVariables.getBlockYInital());
 			getCurrentBlock().setX(GameVariables.getBlockXInital());
 			getCurrentBlock().setRotate(GameVariables.getBlockRotationInital());
-			currentBlock=randomBlock();
+			currentBlock=nextBlock;
+			nextBlock=randomBlock();
 			getCurrentBlock().setY(GameVariables.getBlockYInital());
 			getCurrentBlock().setX(GameVariables.getBlockXInital());
 			getCurrentBlock().setRotate(GameVariables.getBlockRotationInital());

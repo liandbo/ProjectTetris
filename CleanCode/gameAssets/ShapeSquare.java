@@ -11,6 +11,16 @@ public class ShapeSquare implements ShapeInterface {
 	private static int x1,x2,x3,x4;
 	private static int y1,y2,y3,y4;
 	
+	private static int xx1=GameVariables.getPrediction();
+	private static int xx2=GameVariables.getPrediction()+GameVariables.getBlockSize();
+	private static int xx3=GameVariables.getPrediction();
+	private static int xx4=GameVariables.getPrediction()+GameVariables.getBlockSize();
+	
+	private static int yy1=GameVariables.getPrediction();
+	private static int yy2=GameVariables.getPrediction();
+	private static int yy3=GameVariables.getPrediction()+GameVariables.getBlockSize();
+	private static int yy4=GameVariables.getPrediction()+GameVariables.getBlockSize();
+	
 	public int getX() {
 		return x;
 	}
@@ -106,6 +116,44 @@ public class ShapeSquare implements ShapeInterface {
 		x4=x+GameVariables.getBlockSize();	y4=y+GameVariables.getBlockSize();
 	}
 	
-	
+	@Override
+	public int getXX1() {
+		return xx1;
+	}
+
+	@Override
+	public int getXX2() {
+		return xx2;
+	}
+
+	@Override
+	public int getXX3() {
+		return xx3;
+	}
+
+	@Override
+	public int getXX4() {
+		return xx4;
+	}
+
+	@Override
+	public int getYY1() {
+		return yy1;
+	}
+
+	@Override
+	public int getYY2() {
+		return yy2;
+	}
+
+	@Override
+	public int getYY3() {
+		return yy3;
+	}
+
+	@Override
+	public int getYY4() {
+		return yy4;
+	}
 
 }

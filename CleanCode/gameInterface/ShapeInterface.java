@@ -25,6 +25,14 @@ public interface ShapeInterface{
 	public int getY2();
 	public int getY3();
 	public int getY4();
+	public int getXX1();
+	public int getXX2();
+	public int getXX3();
+	public int getXX4();
+	public int getYY1();
+	public int getYY2();
+	public int getYY3();
+	public int getYY4();
 	public int getRotate();
 	public void setBlock();
 
