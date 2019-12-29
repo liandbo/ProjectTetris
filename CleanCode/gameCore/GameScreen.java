@@ -4,8 +4,10 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 import gameData.*;
+
 
 public class GameScreen extends JFrame {
 	
@@ -57,11 +59,19 @@ public class GameScreen extends JFrame {
 			}
 			
 		});
-		
 	}
-	
+	public void Gameover (JFrame j) {
+		int option = JOptionPane.showConfirmDialog(null," Want to try again?","GAME OVER", JOptionPane.YES_NO_OPTION );
+		if (option == JOptionPane.YES_OPTION) {
+			j.dispose();
+			new GameScreen();
+			}
+		else {
+			System.exit(0);
+			}	
+}
 	public static void main(String[] args) {
 		GameScreen screen = new GameScreen();
-		
+		screen.Gameover(screen);
 	}
 }
