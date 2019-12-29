@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import gameData.*;
@@ -14,6 +16,8 @@ public class GameDraw extends JPanel implements Runnable {
 	GameLogic gameLogic = new GameLogic();
 	GameBoard gameBoard = new GameBoard();
 	GameScore gameScore = new GameScore();
+	
+	Thread thread1;
 	
 	public GameDraw() {
 		Thread thread1 = new Thread(this);
@@ -96,7 +100,10 @@ public class GameDraw extends JPanel implements Runnable {
 			gameFunction.increaseBlockY(gameLogic);
 			gameFunction.checkBoardLine(gameLogic);
 			repaint();
-			
+			if (gameLogic.checkGameOver()) {
+			    JOptionPane.showMessageDialog(null, "Game Over");
+				thread1.stop();
+			}
 			
 			
 			

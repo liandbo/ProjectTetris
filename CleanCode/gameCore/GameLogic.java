@@ -40,5 +40,23 @@ public class GameLogic implements LogicInterface {
 		return -1;
 	}
 
+	public boolean checkGameOver() {
+		int sum=0;
+		boolean checker=false;
+		for(int lap=0; lap < GameVariables.getBlockXAmount(); lap++) {
+			for(int i=0; i<GameVariables.getBlockXAmount(); i++) {
+				for(int j=0; j<GameVariables.getBlockYAmount();j++) {
+					sum+= GameBoard.board[i][j];
+				}
+				if(sum == GameVariables.getBlockYAmount()) {
+					checker = true;
+				}
+				sum=0;
+			}
+		}
+		if (checker == true) return true;
+		return false;
+		
+	}
 
 }

@@ -40,12 +40,12 @@ public class GameFunction {
 		a2=a1;
 		a1=temp;
 		System.out.println(a1+" "+a2);
-		temp=rd.nextInt(7)+1;
+		temp=rd.nextInt(8);
 		while (trung == true) {
 			if (temp!=a1 && temp!=a2) {
 				trung = false;
 			} else
-				temp=rd.nextInt(7)+1;
+				temp=rd.nextInt(8);
 		}
 		ShapeInterface randomBlock = listBlock[temp];
 		return randomBlock;
@@ -167,5 +167,7 @@ public class GameFunction {
 			gameBoard.removeLine(logicInterface.checkLine());
 		}
 	}
+	
+	
 	
 }
