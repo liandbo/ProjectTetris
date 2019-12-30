@@ -15,4 +15,8 @@ private static int score;
 	public void ScoreforLine() {
 		score+=GameVariables.getScoreForLine();
 	}
+	
+	public void reSetScore() {
+		score = 0;
+	}
 }

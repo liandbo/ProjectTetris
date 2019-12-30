@@ -39,6 +39,17 @@ public class GameLogic implements LogicInterface {
 		}
 		return -1;
 	}
+	
+	public boolean checkGameOver() {
+		for (int i=0; i <GameVariables.getBlockXAmount();i++ ) {
+			if (GameBoard.board[i][0]==1) {
+				return true;
+			}
+		}
+		
+		return false;
+		
+	}
 
 
 }

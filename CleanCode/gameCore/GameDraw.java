@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import gameData.*;
@@ -76,6 +77,21 @@ public class GameDraw extends JPanel implements Runnable {
 		g.drawString("Diem:" + gameScore.getScore(), GameVariables.getScoreXPos(), GameVariables.getScoreYPos());
 	}
 	
+	public void Gameover () {
+		System.out.println("Gameover");
+		int option = JOptionPane.showConfirmDialog(null," Want to try again?","GAME OVER", JOptionPane.YES_NO_OPTION );
+		if (option == JOptionPane.YES_OPTION) {
+			gameBoard.setBoard();
+			gameFunction.getCurrentBlock().setY(GameVariables.getBlockYInital());
+			gameFunction.getCurrentBlock().setX(GameVariables.getBlockXInital());
+			gameFunction.getCurrentBlock().setRotate(GameVariables.getBlockRotationInital());
+			gameScore.reSetScore();
+			}
+		else {
+			System.exit(0);
+			}	
+	}
+	
 	public void run() {
 		while (true) {
 			
@@ -88,18 +104,17 @@ public class GameDraw extends JPanel implements Runnable {
 				e.printStackTrace();
 			}
 			
-			
+			if (gameLogic.checkGameOver()) {
+			    Gameover();
+			}
 			
 			if(!gameFunction.checkBlock(gameLogic)){
 				gameFunction.resetBlock(gameLogic);
 			}
+			
 			gameFunction.increaseBlockY(gameLogic);
 			gameFunction.checkBoardLine(gameLogic);
 			repaint();
-			
-			
-			
-			
 		}
 	}
 	
