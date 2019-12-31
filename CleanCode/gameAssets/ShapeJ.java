@@ -11,15 +11,15 @@ public class ShapeJ implements ShapeInterface {
 	private static int x1,x2,x3,x4;
 	private static int y1,y2,y3,y4;
 	
-	private static int xx1=GameVariables.getPrediction();
-	private static int xx2=GameVariables.getPrediction();
-	private static int xx3=GameVariables.getPrediction();
-	private static int xx4=GameVariables.getPrediction()-GameVariables.getBlockSize();
+	private static int xx1=GameVariables.getPredictionX();
+	private static int xx2=GameVariables.getPredictionX();
+	private static int xx3=GameVariables.getPredictionX();
+	private static int xx4=GameVariables.getPredictionX()-GameVariables.getBlockSize();
 	
-	private static int yy1=GameVariables.getPrediction();
-	private static int yy2=GameVariables.getPrediction()+GameVariables.getBlockSize();
-	private static int yy3=GameVariables.getPrediction()-GameVariables.getBlockSize();
-	private static int yy4=GameVariables.getPrediction()+GameVariables.getBlockSize();
+	private static int yy1=GameVariables.getPredictionY();
+	private static int yy2=GameVariables.getPredictionY()+GameVariables.getBlockSize();
+	private static int yy3=GameVariables.getPredictionY()-GameVariables.getBlockSize();
+	private static int yy4=GameVariables.getPredictionY()+GameVariables.getBlockSize();
 	
 	
 	public int getX() {

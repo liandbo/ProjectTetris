@@ -35,7 +35,8 @@ public class GameVariables {
 	private static int scoreForDown = 1;
 	private static int scoreForLine = 10;
 	
-	private static int Prediction = 600;
+	private static int predictionX = boardXSize+100;
+	private static int predictionY = boardYSize-boardYSize/2;
 	
 	public static Color randomBlockColor() {
 		Color randomBlockColor = blockColorList[(int) (Math.random() * blockColorList.length)];
@@ -114,8 +115,12 @@ public class GameVariables {
 	public static int getScoreYPos() {
 		return scoreYPos;
 	}
-	public static int getPrediction() {
-		return Prediction;
+	public static int getPredictionX() {
+		return predictionX;
 	}
+	public static int getPredictionY() {
+		return predictionY;
+	}
+	
 
 }

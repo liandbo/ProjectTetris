@@ -73,8 +73,8 @@ public class GameDraw extends JPanel implements Runnable {
 		
 		//in diem
 		g.setColor(GameVariables.getScoreColor());
-		g.setFont(new Font("Arial",Font.BOLD,20));
-		g.drawString("Diem:" + gameScore.getScore(), GameVariables.getScoreXPos(), GameVariables.getScoreYPos());
+		g.setFont(new Font("Arial",Font.BOLD,50));
+		g.drawString("Score:" + gameScore.getScore(), GameVariables.getScoreXPos(), GameVariables.getScoreYPos());
 	}
 	
 	public void Gameover () {
