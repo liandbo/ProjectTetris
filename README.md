@@ -4,4 +4,4 @@ Class:
 -Background
 -Block
 
-Idenx file: CleanCode/GameData/GameScreen.java
+Idenx file: CleanCode/gameCore/GameScreen.java
